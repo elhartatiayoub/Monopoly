@@ -13,6 +13,7 @@ package monopoly.app;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 
 /**
  *
@@ -97,6 +98,7 @@ public static void PasserFenetreSuivante2(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 acc=new Accueil();
+                acc.setExtendedState(JFrame.MAXIMIZED_BOTH); 
                 acc.setVisible(true);
 
             }
