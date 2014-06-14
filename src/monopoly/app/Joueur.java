@@ -16,6 +16,7 @@ public class Joueur {
         this.proprietes = proprietes;
     }
 	private String nom;
+        private int icone;
 	private int pos ;
         private int solde;
         private int enPrison;
@@ -91,5 +92,19 @@ public class Joueur {
 		else this.solde=v;
 		return 0;
 	}
+
+    /**
+     * @return the icone
+     */
+    public int getIcone() {
+        return icone;
+    }
+
+    /**
+     * @param icone the icone to set
+     */
+    public void setIcone(int icone) {
+        this.icone = icone;
+    }
 
 }

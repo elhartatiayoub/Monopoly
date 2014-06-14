@@ -13,6 +13,7 @@ package monopoly.app;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.DefaultListSelectionModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,6 +23,11 @@ import javax.swing.JOptionPane;
 public class choix_joueurs extends javax.swing.JFrame {
 
     public static List<Joueur> joueurs=new ArrayList<Joueur>();
+
+    /**
+     *pour éviter les mm selections du pion du jeu
+     */
+    public static  ArrayList disabled= new ArrayList();
 
     /** Creates new form choix_joueurs */
     public choix_joueurs() {
@@ -49,6 +55,14 @@ public class choix_joueurs extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
+        jComboBox2 = new javax.swing.JComboBox();
+        jComboBox2.setVisible(false);
+        jComboBox3 = new javax.swing.JComboBox();
+        jComboBox3.setVisible(false);
+        jComboBox4 = new javax.swing.JComboBox();
+        jComboBox4.setVisible(false);
+        jComboBox5 = new javax.swing.JComboBox();
+        jComboBox2.setVisible(false);
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -98,31 +112,62 @@ public class choix_joueurs extends javax.swing.JFrame {
 
         jLabel2.setText("Joueur N° 1 :");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(105, 77, 82, 14);
+        jLabel2.setBounds(80, 90, 82, 14);
 
         jLabel3.setText("Joueur N° 2 :");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(105, 108, 82, 14);
+        jLabel3.setBounds(80, 120, 82, 14);
 
         jLabel4.setText("Joueur N° 3 :");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(105, 145, 82, 14);
+        jLabel4.setBounds(80, 150, 82, 14);
 
         jLabel5.setText("Joueur N° 4 :");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(105, 176, 82, 14);
+        jLabel5.setBounds(80, 180, 82, 14);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(191, 74, 168, 20);
+        jTextField1.setBounds(160, 90, 168, 20);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(191, 105, 168, 20);
+        jTextField2.setBounds(160, 120, 168, 20);
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(191, 142, 168, 20);
+        jTextField3.setBounds(160, 150, 168, 20);
         getContentPane().add(jTextField4);
-        jTextField4.setBounds(191, 173, 168, 20);
+        jTextField4.setBounds(160, 180, 168, 20);
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "pion 1", "pion 2", "pion 3", "pion 4" }));
+        jComboBox2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox2ItemStateChanged(evt);
+            }
+        });
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox2);
+        jComboBox2.setBounds(350, 90, 90, 20);
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "pion 1", "pion 2", "pion 3", "pion 4" }));
+        getContentPane().add(jComboBox3);
+        jComboBox3.setBounds(350, 120, 90, 20);
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "pion 1", "pion 2", "pion 3", "pion 4" }));
+        getContentPane().add(jComboBox4);
+        jComboBox4.setBounds(350, 150, 90, 20);
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "pion 1", "pion 2", "pion 3", "pion 4" }));
+        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox5);
+        jComboBox5.setBounds(350, 180, 90, 20);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/im2.png"))); // NOI18N
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 0, 530, 300);
+        jLabel6.setBounds(-10, 0, 530, 300);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -231,12 +276,14 @@ public class choix_joueurs extends javax.swing.JFrame {
                 j1.setNom(jTextField1.getText());
                 j1.setId(1);
                 j1.setEnPrison(0);
+                j1.setIcone(jComboBox2.getSelectedIndex());
                 j1.setNombreCartePrison(0);
                 j1.setSolde(1500);
 
                 j2.setNom(jTextField2.getText());
                 j2.setId(2);
                 j2.setEnPrison(0);
+                j2.setIcone(jComboBox3.getSelectedIndex());
                 j2.setNombreCartePrison(0);
                 j2.setSolde(1500);
                 
@@ -260,18 +307,21 @@ public class choix_joueurs extends javax.swing.JFrame {
                 j1.setNom(jTextField1.getText());
                 j1.setId(1);
                 j1.setEnPrison(0);
+                j1.setIcone(jComboBox2.getSelectedIndex());
                 j1.setNombreCartePrison(0);
                 j1.setSolde(1500);
 
                 j2.setNom(jTextField2.getText());
                 j2.setId(2);
                 j2.setEnPrison(0);
+                j2.setIcone(jComboBox3.getSelectedIndex());
                 j2.setNombreCartePrison(0);
                 j2.setSolde(1500);
 
                 j3.setNom(jTextField3.getText());
                 j3.setId(3);
                 j3.setEnPrison(0);
+                j3.setIcone(jComboBox4.getSelectedIndex());
                 j3.setNombreCartePrison(0);
                 j3.setSolde(1500);
                 
@@ -299,24 +349,29 @@ public class choix_joueurs extends javax.swing.JFrame {
                 j1.setNom(jTextField1.getText());
                 j1.setId(1);
                 j1.setEnPrison(0);
+                j1.setIcone(jComboBox2.getSelectedIndex());
                 j1.setNombreCartePrison(0);
                 j1.setSolde(1500);
+                
 
                 j2.setNom(jTextField2.getText());
                 j2.setId(2);
                 j2.setEnPrison(0);
+                j2.setIcone(jComboBox3.getSelectedIndex());
                 j2.setNombreCartePrison(0);
                 j2.setSolde(1500);
 
                 j3.setNom(jTextField3.getText());
                 j3.setId(3);
                 j3.setEnPrison(0);
+                j3.setIcone(jComboBox4.getSelectedIndex());
                 j3.setNombreCartePrison(0);
                 j3.setSolde(1500);
 
                 j4.setNom(jTextField4.getText());
                 j4.setId(4);
                 j4.setEnPrison(0);
+                j4.setIcone(jComboBox5.getSelectedIndex());
                 j4.setNombreCartePrison(0);
                 j4.setSolde(1500);
 
@@ -331,11 +386,49 @@ public class choix_joueurs extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox5ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jComboBox2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox2ItemStateChanged
+        DefaultListSelectionModel model = new DefaultListSelectionModel();
+
+		model.addSelectionInterval(0, 3);
+
+                
+		JComboBoxRend2 enableRenderer = new JComboBoxRend2(model);
+
+		jComboBox2.setRenderer(enableRenderer);
+        
+        System.out.println(evt.getItemSelectable());
+        System.out.println(jComboBox2.getSelectedIndex());
+        disabled.clear();
+        if(jComboBox3.getSelectedIndex()!=0)
+            disabled.add(jComboBox3.getSelectedIndex());
+        if(jComboBox4.getSelectedIndex()!=0)
+            disabled.add(jComboBox4.getSelectedIndex());
+        if(jComboBox5.getSelectedIndex()!=0)
+            disabled.add(jComboBox5.getSelectedIndex());
+        
+     
+        if(jComboBox2.getSelectedIndex()==1){
+           
+        }
+    }//GEN-LAST:event_jComboBox2ItemStateChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboBox3;
+    private javax.swing.JComboBox jComboBox4;
+    private javax.swing.JComboBox jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
