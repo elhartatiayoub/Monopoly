@@ -10,10 +10,11 @@
  */
 package monopoly.app;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.DefaultListSelectionModel;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
 
 /**
  *
@@ -22,6 +23,7 @@ import javax.swing.JOptionPane;
 public class choix_joueurs extends javax.swing.JFrame {
 
     public static List<Joueur> joueurs = new ArrayList<Joueur>();
+   
 
  
     /**
@@ -42,7 +44,24 @@ public class choix_joueurs extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
         jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jRadioButton7 = new javax.swing.JRadioButton();
+        jRadioButton8 = new javax.swing.JRadioButton();
+        jRadioButton9 = new javax.swing.JRadioButton();
+        jRadioButton10 = new javax.swing.JRadioButton();
+        jRadioButton11 = new javax.swing.JRadioButton();
+        jRadioButton12 = new javax.swing.JRadioButton();
+        jRadioButton13 = new javax.swing.JRadioButton();
+        jRadioButton14 = new javax.swing.JRadioButton();
+        jRadioButton15 = new javax.swing.JRadioButton();
+        jRadioButton16 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox();
@@ -58,7 +77,7 @@ public class choix_joueurs extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(532, 306));
+        setMinimumSize(new java.awt.Dimension(532, 320));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -66,14 +85,268 @@ public class choix_joueurs extends javax.swing.JFrame {
         });
         getContentPane().setLayout(null);
 
-        jRadioButton1.setText("jRadioButton1");
+        jRadioButton1.setBackground(new Color(0,0,0,0));
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion1.png")+"'></img></html>");
+        jRadioButton1.setHideActionText(true);
+        jRadioButton1.setOpaque(false);
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jRadioButton1);
-        jRadioButton1.setBounds(400, 90, 93, 23);
+        jRadioButton1.setBounds(290, 60, 50, 40);
+
+        jRadioButton2.setBackground(new Color(0,0,0,0));
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion2.png")+"'></img></html>");
+        jRadioButton2.setHideActionText(true);
+        jRadioButton2.setOpaque(false);
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jRadioButton2);
+        jRadioButton2.setBounds(340, 60, 50, 40);
+
+        jRadioButton3.setBackground(new Color(0,0,0,0));
+        buttonGroup1.add(jRadioButton3);
+        jRadioButton3.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion3.png")+"'></img></html>");
+        jRadioButton3.setHideActionText(true);
+        jRadioButton3.setOpaque(false);
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jRadioButton3);
+        jRadioButton3.setBounds(390, 60, 50, 40);
+
+        jRadioButton4.setBackground(new Color(0,0,0,0));
+        buttonGroup1.add(jRadioButton4);
+        jRadioButton4.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion4.png")+"'></img></html>");
+        jRadioButton4.setHideActionText(true);
+        jRadioButton4.setOpaque(false);
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jRadioButton4);
+        jRadioButton4.setBounds(440, 60, 50, 40);
+
+        jRadioButton5.setBackground(new Color(0,0,0,0));
+        buttonGroup2.add(jRadioButton5);
+        jRadioButton5.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion1.png")+"'></img></html>");
+        jRadioButton5.setHideActionText(true);
+        jRadioButton5.setOpaque(false);
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton5ActionPerformed(evt);
+            }
+        });
+        jRadioButton5.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jRadioButton7PropertyChange(evt);
+            }
+        });
+        getContentPane().add(jRadioButton5);
+        jRadioButton5.setBounds(290, 110, 50, 40);
+
+        jRadioButton6.setBackground(new Color(0,0,0,0));
+        buttonGroup2.add(jRadioButton6);
+        jRadioButton6.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion2.png")+"'></img></html>");
+        jRadioButton6.setHideActionText(true);
+        jRadioButton6.setOpaque(false);
+        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton6ActionPerformed(evt);
+            }
+        });
+        jRadioButton6.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jRadioButton7PropertyChange(evt);
+            }
+        });
+        getContentPane().add(jRadioButton6);
+        jRadioButton6.setBounds(340, 110, 50, 40);
+
+        jRadioButton7.setBackground(new Color(0,0,0,0));
+        buttonGroup2.add(jRadioButton7);
+        jRadioButton7.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion3.png")+"'></img></html>");
+        jRadioButton7.setHideActionText(true);
+        jRadioButton7.setOpaque(false);
+        jRadioButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                llk(evt);
+            }
+        });
+        getContentPane().add(jRadioButton7);
+        jRadioButton7.setBounds(390, 110, 50, 40);
+
+        jRadioButton8.setBackground(new Color(0,0,0,0));
+        buttonGroup2.add(jRadioButton8);
+        jRadioButton8.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion4.png")+"'></img></html>");
+        jRadioButton8.setHideActionText(true);
+        jRadioButton8.setOpaque(false);
+        jRadioButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton8ActionPerformed(evt);
+            }
+        });
+        jRadioButton8.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jRadioButton7PropertyChange(evt);
+            }
+        });
+        getContentPane().add(jRadioButton8);
+        jRadioButton8.setBounds(440, 110, 50, 40);
+
+        jRadioButton9.setBackground(new Color(0,0,0,0));
+        buttonGroup3.add(jRadioButton9);
+        jRadioButton9.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion1.png")+"'></img></html>");
+        jRadioButton9.setHideActionText(true);
+        jRadioButton9.setOpaque(false);
+        jRadioButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton9ActionPerformed(evt);
+            }
+        });
+        jRadioButton9.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jRadioButton7PropertyChange(evt);
+            }
+        });
+        getContentPane().add(jRadioButton9);
+        jRadioButton9.setBounds(290, 160, 50, 40);
+
+        jRadioButton10.setBackground(new Color(0,0,0,0));
+        buttonGroup3.add(jRadioButton10);
+        jRadioButton10.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion2.png")+"'></img></html>");
+        jRadioButton10.setHideActionText(true);
+        jRadioButton10.setOpaque(false);
+        jRadioButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton10ActionPerformed(evt);
+            }
+        });
+        jRadioButton10.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jRadioButton7PropertyChange(evt);
+            }
+        });
+        getContentPane().add(jRadioButton10);
+        jRadioButton10.setBounds(340, 160, 50, 40);
+
+        jRadioButton11.setBackground(new Color(0,0,0,0));
+        buttonGroup3.add(jRadioButton11);
+        jRadioButton11.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion3.png")+"'></img></html>");
+        jRadioButton11.setHideActionText(true);
+        jRadioButton11.setOpaque(false);
+        jRadioButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton11ActionPerformed(evt);
+            }
+        });
+        jRadioButton11.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jRadioButton7PropertyChange(evt);
+            }
+        });
+        getContentPane().add(jRadioButton11);
+        jRadioButton11.setBounds(390, 160, 50, 40);
+
+        jRadioButton12.setBackground(new Color(0,0,0,0));
+        buttonGroup3.add(jRadioButton12);
+        jRadioButton12.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion4.png")+"'></img></html>");
+        jRadioButton12.setHideActionText(true);
+        jRadioButton12.setOpaque(false);
+        jRadioButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton12ActionPerformed(evt);
+            }
+        });
+        jRadioButton12.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jRadioButton7PropertyChange(evt);
+            }
+        });
+        getContentPane().add(jRadioButton12);
+        jRadioButton12.setBounds(440, 160, 50, 40);
+
+        jRadioButton13.setBackground(new Color(0,0,0,0));
+        buttonGroup4.add(jRadioButton13);
+        jRadioButton13.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion1.png")+"'></img></html>");
+        jRadioButton13.setHideActionText(true);
+        jRadioButton13.setOpaque(false);
+        jRadioButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton13ActionPerformed(evt);
+            }
+        });
+        jRadioButton13.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jRadioButton7PropertyChange(evt);
+            }
+        });
+        getContentPane().add(jRadioButton13);
+        jRadioButton13.setBounds(290, 210, 50, 40);
+
+        jRadioButton14.setBackground(new Color(0,0,0,0));
+        buttonGroup4.add(jRadioButton14);
+        jRadioButton14.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion2.png")+"'></img></html>");
+        jRadioButton14.setHideActionText(true);
+        jRadioButton14.setOpaque(false);
+        jRadioButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton14ActionPerformed(evt);
+            }
+        });
+        jRadioButton14.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jRadioButton7PropertyChange(evt);
+            }
+        });
+        getContentPane().add(jRadioButton14);
+        jRadioButton14.setBounds(340, 210, 50, 40);
+
+        jRadioButton15.setBackground(new Color(0,0,0,0));
+        buttonGroup4.add(jRadioButton15);
+        jRadioButton15.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion3.png")+"'></img></html>");
+        jRadioButton15.setHideActionText(true);
+        jRadioButton15.setOpaque(false);
+        jRadioButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton15ActionPerformed(evt);
+            }
+        });
+        jRadioButton15.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jRadioButton7PropertyChange(evt);
+            }
+        });
+        getContentPane().add(jRadioButton15);
+        jRadioButton15.setBounds(390, 210, 50, 40);
+
+        jRadioButton16.setBackground(new Color(0,0,0,0));
+        buttonGroup4.add(jRadioButton16);
+        jRadioButton16.setText("<html><img src='"+getClass().getResource("/monopoly/images/pion4.png")+"'></img></html>");
+        jRadioButton16.setHideActionText(true);
+        jRadioButton16.setOpaque(false);
+        jRadioButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton16ActionPerformed(evt);
+            }
+        });
+        jRadioButton16.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jRadioButton7PropertyChange(evt);
+            }
+        });
+        getContentPane().add(jRadioButton16);
+        jRadioButton16.setBounds(440, 210, 50, 40);
 
         jButton1.setText("Annuler");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +355,7 @@ public class choix_joueurs extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(130, 210, 110, 23);
+        jButton1.setBounds(130, 260, 110, 23);
 
         jButton2.setText("Commencer");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +364,7 @@ public class choix_joueurs extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(270, 210, 110, 23);
+        jButton2.setBounds(270, 260, 110, 23);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aucun", "2 joueurs", "3 joueurs", "4 joueurs" }));
         jComboBox1.addItemListener(new java.awt.event.ItemListener() {
@@ -105,37 +378,38 @@ public class choix_joueurs extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(242, 21, 203, 20);
+        jComboBox1.setBounds(240, 20, 203, 20);
 
         jLabel1.setText("Choisir le nombre de joueurs : ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(50, 21, 182, 20);
+        jLabel1.setBounds(50, 20, 182, 20);
 
         jLabel2.setText("Joueur N° 1 :");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(130, 70, 82, 14);
+        jLabel2.setBounds(20, 70, 82, 14);
 
         jLabel3.setText("Joueur N° 2 :");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(130, 100, 82, 14);
+        jLabel3.setBounds(20, 120, 82, 20);
 
         jLabel4.setText("Joueur N° 3 :");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(130, 130, 82, 14);
+        jLabel4.setBounds(20, 170, 82, 20);
 
         jLabel5.setText("Joueur N° 4 :");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(130, 160, 82, 14);
+        jLabel5.setBounds(20, 220, 82, 14);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(210, 70, 168, 20);
+        jTextField1.setBounds(100, 70, 168, 20);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(210, 100, 168, 20);
+        jTextField2.setBounds(100, 120, 168, 20);
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(210, 130, 168, 20);
+        jTextField3.setBounds(100, 170, 168, 20);
         getContentPane().add(jTextField4);
-        jTextField4.setBounds(210, 160, 168, 20);
+        jTextField4.setBounds(100, 220, 168, 20);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/im2.png"))); // NOI18N
+        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(jLabel6);
         jLabel6.setBounds(0, 0, 530, 300);
 
@@ -150,15 +424,31 @@ public class choix_joueurs extends javax.swing.JFrame {
 
         jLabel2.setVisible(false);
         jTextField1.setVisible(false);
+        jRadioButton1.setVisible(false);
+        jRadioButton2.setVisible(false);
+        jRadioButton3.setVisible(false);
+        jRadioButton4.setVisible(false);
 
         jLabel3.setVisible(false);
         jTextField2.setVisible(false);
+        jRadioButton5.setVisible(false);
+        jRadioButton6.setVisible(false);
+        jRadioButton7.setVisible(false);
+        jRadioButton8.setVisible(false);
 
         jLabel4.setVisible(false);
         jTextField3.setVisible(false);
+        jRadioButton9.setVisible(false);
+        jRadioButton10.setVisible(false);
+        jRadioButton11.setVisible(false);
+        jRadioButton12.setVisible(false);
 
         jLabel5.setVisible(false);
         jTextField4.setVisible(false);
+        jRadioButton13.setVisible(false);
+        jRadioButton14.setVisible(false);
+        jRadioButton15.setVisible(false);
+        jRadioButton16.setVisible(false);
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -176,62 +466,170 @@ public class choix_joueurs extends javax.swing.JFrame {
         } else {
             jButton2.setEnabled(false);
             jLabel2.setVisible(false);
-            jTextField1.setVisible(false);
+        jTextField1.setVisible(false);
+        jRadioButton1.setVisible(false);
+        jRadioButton2.setVisible(false);
+        jRadioButton3.setVisible(false);
+        jRadioButton4.setVisible(false);
 
-            jLabel3.setVisible(false);
-            jTextField2.setVisible(false);
+        jLabel3.setVisible(false);
+        jTextField2.setVisible(false);
+        jRadioButton5.setVisible(false);
+        jRadioButton6.setVisible(false);
+        jRadioButton7.setVisible(false);
+        jRadioButton8.setVisible(false);
 
-            jLabel4.setVisible(false);
-            jTextField3.setVisible(false);
+        jLabel4.setVisible(false);
+        jTextField3.setVisible(false);
+        jRadioButton9.setVisible(false);
+        jRadioButton10.setVisible(false);
+        jRadioButton11.setVisible(false);
+        jRadioButton12.setVisible(false);
 
-            jLabel5.setVisible(false);
-            jTextField4.setVisible(false);
+        jLabel5.setVisible(false);
+        jTextField4.setVisible(false);
+        jRadioButton13.setVisible(false);
+        jRadioButton14.setVisible(false);
+        jRadioButton15.setVisible(false);
+        jRadioButton16.setVisible(false);
         }
 
         if ((jComboBox1.getSelectedItem()).equals("2 joueurs")) {
             jLabel2.setVisible(true);
-            jTextField1.setVisible(true);
+        jTextField1.setVisible(true);
+        jRadioButton1.setVisible(true);
+        jRadioButton2.setVisible(true);
+        jRadioButton3.setVisible(true);
+        jRadioButton4.setVisible(true);
 
-            jLabel3.setVisible(true);
-            jTextField2.setVisible(true);
+        jLabel3.setVisible(true);
+        jTextField2.setVisible(true);
+        jRadioButton5.setVisible(true);
+        jRadioButton6.setVisible(true);
+        jRadioButton7.setVisible(true);
+        jRadioButton8.setVisible(true);
 
-            jLabel4.setVisible(false);
-            jTextField3.setVisible(false);
+        jLabel4.setVisible(false);
+        jTextField3.setVisible(false);
+        jRadioButton9.setVisible(false);
+        jRadioButton10.setVisible(false);
+        jRadioButton11.setVisible(false);
+        jRadioButton12.setVisible(false);
 
-            jLabel5.setVisible(false);
-            jTextField4.setVisible(false);
+        jLabel5.setVisible(false);
+        jTextField4.setVisible(false);
+        jRadioButton13.setVisible(false);
+        jRadioButton14.setVisible(false);
+        jRadioButton15.setVisible(false);
+        jRadioButton16.setVisible(false);
         }
 
         if ((jComboBox1.getSelectedItem()).equals("3 joueurs")) {
             jLabel2.setVisible(true);
-            jTextField1.setVisible(true);
+        jTextField1.setVisible(true);
+        jRadioButton1.setVisible(true);
+        jRadioButton2.setVisible(true);
+        jRadioButton3.setVisible(true);
+        jRadioButton4.setVisible(true);
 
-            jLabel3.setVisible(true);
-            jTextField2.setVisible(true);
+        jLabel3.setVisible(true);
+        jTextField2.setVisible(true);
+        jRadioButton5.setVisible(true);
+        jRadioButton6.setVisible(true);
+        jRadioButton7.setVisible(true);
+        jRadioButton8.setVisible(true);
 
-            jLabel4.setVisible(true);
-            jTextField3.setVisible(true);
+        jLabel4.setVisible(true);
+        jTextField3.setVisible(true);
+        jRadioButton9.setVisible(true);
+        jRadioButton10.setVisible(true);
+        jRadioButton11.setVisible(true);
+        jRadioButton12.setVisible(true);
 
-            jLabel5.setVisible(false);
-            jTextField4.setVisible(false);
+        jLabel5.setVisible(false);
+        jTextField4.setVisible(false);
+        jRadioButton13.setVisible(false);
+        jRadioButton14.setVisible(false);
+        jRadioButton15.setVisible(false);
+        jRadioButton16.setVisible(false);
         }
 
         if ((jComboBox1.getSelectedItem()).equals("4 joueurs")) {
             jLabel2.setVisible(true);
-            jTextField1.setVisible(true);
+        jTextField1.setVisible(true);
+        jRadioButton1.setVisible(true);
+        jRadioButton2.setVisible(true);
+        jRadioButton3.setVisible(true);
+        jRadioButton4.setVisible(true);
 
-            jLabel3.setVisible(true);
-            jTextField2.setVisible(true);
+        jLabel3.setVisible(true);
+        jTextField2.setVisible(true);
+        jRadioButton5.setVisible(true);
+        jRadioButton6.setVisible(true);
+        jRadioButton7.setVisible(true);
+        jRadioButton8.setVisible(true);
 
-            jLabel4.setVisible(true);
-            jTextField3.setVisible(true);
+        jLabel4.setVisible(true);
+        jTextField3.setVisible(true);
+        jRadioButton9.setVisible(true);
+        jRadioButton10.setVisible(true);
+        jRadioButton11.setVisible(true);
+        jRadioButton12.setVisible(true);
 
-            jLabel5.setVisible(true);
-            jTextField4.setVisible(true);
+        jLabel5.setVisible(true);
+        jTextField4.setVisible(true);
+        jRadioButton13.setVisible(true);
+        jRadioButton14.setVisible(true);
+        jRadioButton15.setVisible(true);
+        jRadioButton16.setVisible(true);
         }
 
     }//GEN-LAST:event_jComboBox1ItemStateChanged
 
+    int getValuePion(int i){
+        if(i==1){
+            if(jRadioButton1.isSelected())
+                return 1;
+            if(jRadioButton2.isSelected())
+                return 2;
+            if(jRadioButton3.isSelected())
+                return 3;
+            if(jRadioButton4.isSelected())
+                return 4;
+        }
+        if(i==2){
+            if(jRadioButton5.isSelected())
+                return 1;
+            if(jRadioButton5.isSelected())
+                return 2;
+            if(jRadioButton7.isSelected())
+                return 3;
+            if(jRadioButton8.isSelected())
+                return 4;
+        }
+        if(i==3){
+            if(jRadioButton9.isSelected())
+                return 1;
+            if(jRadioButton10.isSelected())
+                return 2;
+            if(jRadioButton11.isSelected())
+                return 3;
+            if(jRadioButton12.isSelected())
+                return 4;
+        }
+        if(i==4){
+            if(jRadioButton13.isSelected())
+                return 1;
+            if(jRadioButton14.isSelected())
+                return 2;
+            if(jRadioButton14.isSelected())
+                return 3;
+            if(jRadioButton16.isSelected())
+                return 4;
+        }
+        return 0;
+    }
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         if ((jComboBox1.getSelectedItem()).equals("2 joueurs")) {
@@ -244,12 +642,14 @@ public class choix_joueurs extends javax.swing.JFrame {
                 j1.setNom(jTextField1.getText());
                 j1.setId(1);
                 j1.setEnPrison(0);
+                j1.setIcone(getValuePion(1));
                 j1.setNombreCartePrison(0);
                 j1.setSolde(1500);
 
                 j2.setNom(jTextField2.getText());
                 j2.setId(2);
                 j2.setEnPrison(0);
+                j2.setIcone(getValuePion(2));
                 j2.setNombreCartePrison(0);
                 j2.setSolde(1500);
 
@@ -272,18 +672,22 @@ public class choix_joueurs extends javax.swing.JFrame {
                 j1.setNom(jTextField1.getText());
                 j1.setId(1);
                 j1.setEnPrison(0);
+                
+                j1.setIcone(getValuePion(1));
                 j1.setNombreCartePrison(0);
                 j1.setSolde(1500);
 
                 j2.setNom(jTextField2.getText());
                 j2.setId(2);
                 j2.setEnPrison(0);
+                j2.setIcone(getValuePion(2));
                 j2.setNombreCartePrison(0);
                 j2.setSolde(1500);
 
                 j3.setNom(jTextField3.getText());
                 j3.setId(3);
                 j3.setEnPrison(0);
+                j3.setIcone(getValuePion(3));
                 j3.setNombreCartePrison(0);
                 j3.setSolde(1500);
 
@@ -308,24 +712,28 @@ public class choix_joueurs extends javax.swing.JFrame {
                 j1.setNom(jTextField1.getText());
                 j1.setId(1);
                 j1.setEnPrison(0);
+                j1.setIcone(getValuePion(1));
                 j1.setNombreCartePrison(0);
                 j1.setSolde(1500);
 
                 j2.setNom(jTextField2.getText());
                 j2.setId(2);
                 j2.setEnPrison(0);
+                j2.setIcone(getValuePion(2));
                 j2.setNombreCartePrison(0);
                 j2.setSolde(1500);
 
                 j3.setNom(jTextField3.getText());
                 j3.setId(3);
                 j3.setEnPrison(0);
+                j3.setIcone(getValuePion(3));
                 j3.setNombreCartePrison(0);
                 j3.setSolde(1500);
 
                 j4.setNom(jTextField4.getText());
                 j4.setId(4);
                 j4.setEnPrison(0);
+                j4.setIcone(getValuePion(4));
                 j4.setNombreCartePrison(0);
                 j4.setSolde(1500);
 
@@ -339,15 +747,108 @@ public class choix_joueurs extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+    
+    public void refreshPionButtons() {
+                JRadioButton[][] joueur_ = {{jRadioButton1,jRadioButton2, jRadioButton3, jRadioButton4},
+                                            {jRadioButton5,jRadioButton6, jRadioButton7, jRadioButton8},
+                                            {jRadioButton9,jRadioButton10, jRadioButton11, jRadioButton12},
+                                            {jRadioButton13,jRadioButton14, jRadioButton15, jRadioButton16},
+                                            };
+		// set tous radio buttons a enabled
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++)
+				joueur_[i][j].setEnabled(true);
+		}
+
+		
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (joueur_[i][j].isSelected()) {
+
+					for (int z = 1; z < 4; z++) {
+						joueur_[(i + z) % 4][j].setEnabled(false);
+					}
+
+					break;
+				}
+			}
+		}
+	}
+    
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+       refreshPionButtons();
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
+
+    private void jRadioButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton12ActionPerformed
+       refreshPionButtons();
+    }//GEN-LAST:event_jRadioButton12ActionPerformed
+
+    private void jRadioButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton15ActionPerformed
+       refreshPionButtons();
+    }//GEN-LAST:event_jRadioButton15ActionPerformed
+
+    private void jRadioButton7PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jRadioButton7PropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton7PropertyChange
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
+        refreshPionButtons();
     }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void llk(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_llk
+        refreshPionButtons();
+    }//GEN-LAST:event_llk
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        refreshPionButtons();
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        refreshPionButtons();
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        refreshPionButtons();
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
+        refreshPionButtons();
+    }//GEN-LAST:event_jRadioButton6ActionPerformed
+
+    private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton8ActionPerformed
+        refreshPionButtons();
+    }//GEN-LAST:event_jRadioButton8ActionPerformed
+
+    private void jRadioButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton11ActionPerformed
+        refreshPionButtons();
+    }//GEN-LAST:event_jRadioButton11ActionPerformed
+
+    private void jRadioButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton10ActionPerformed
+       refreshPionButtons();
+    }//GEN-LAST:event_jRadioButton10ActionPerformed
+
+    private void jRadioButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton9ActionPerformed
+        refreshPionButtons();
+    }//GEN-LAST:event_jRadioButton9ActionPerformed
+
+    private void jRadioButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton13ActionPerformed
+        refreshPionButtons();
+    }//GEN-LAST:event_jRadioButton13ActionPerformed
+
+    private void jRadioButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton14ActionPerformed
+        refreshPionButtons();
+    }//GEN-LAST:event_jRadioButton14ActionPerformed
+
+    private void jRadioButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton16ActionPerformed
+        refreshPionButtons();
+    }//GEN-LAST:event_jRadioButton16ActionPerformed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox jComboBox1;
@@ -358,6 +859,21 @@ public class choix_joueurs extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton10;
+    private javax.swing.JRadioButton jRadioButton11;
+    private javax.swing.JRadioButton jRadioButton12;
+    private javax.swing.JRadioButton jRadioButton13;
+    private javax.swing.JRadioButton jRadioButton14;
+    private javax.swing.JRadioButton jRadioButton15;
+    private javax.swing.JRadioButton jRadioButton16;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
