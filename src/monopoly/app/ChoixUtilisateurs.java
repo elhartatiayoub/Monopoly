@@ -42,7 +42,10 @@ public class ChoixUtilisateurs extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(402, 313));
+        setAlwaysOnTop(true);
+        setMaximumSize(null);
+        setMinimumSize(new java.awt.Dimension(498, 266));
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -57,7 +60,7 @@ public class ChoixUtilisateurs extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(60, 100, 193, 23);
+        jButton1.setBounds(30, 50, 193, 23);
 
         jButton2.setText("Régles de jeu");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +69,7 @@ public class ChoixUtilisateurs extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(60, 140, 193, 23);
+        jButton2.setBounds(30, 90, 193, 23);
 
         jButton3.setText("Quitter");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +78,7 @@ public class ChoixUtilisateurs extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(60, 220, 193, 23);
+        jButton3.setBounds(30, 170, 193, 23);
 
         jButton4.setText("A propos");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -84,11 +87,11 @@ public class ChoixUtilisateurs extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(60, 180, 193, 23);
+        jButton4.setBounds(30, 130, 193, 23);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/im1.png"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 402, 300);
+        jLabel1.setBounds(0, 0, 500, 240);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

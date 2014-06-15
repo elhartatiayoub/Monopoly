@@ -38,12 +38,15 @@ public class Accueil extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
         setBackground(new java.awt.Color(153, 0, 153));
-        setMinimumSize(new java.awt.Dimension(500, 559));
+        setFocusable(false);
+        setLocationByPlatform(true);
+        setMinimumSize(new java.awt.Dimension(600, 338));
+        setUndecorated(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -55,16 +58,11 @@ public class Accueil extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/LoadingProgressBar.gif"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(240, 490, 70, 40);
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Chargement");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(220, 480, 110, 17);
+        jLabel1.setBounds(280, 260, 70, 40);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/monopoly_man.png"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, -20, 510, 600);
+        jLabel2.setBounds(0, 0, 610, 340);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -98,7 +96,6 @@ public static void PasserFenetreSuivante2(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 acc=new Accueil();
-                acc.setExtendedState(JFrame.MAXIMIZED_BOTH); 
                 acc.setVisible(true);
 
             }
@@ -109,7 +106,6 @@ public static void PasserFenetreSuivante2(){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 
 }
