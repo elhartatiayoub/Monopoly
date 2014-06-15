@@ -220,7 +220,7 @@ public class AfficherCase extends javax.swing.JFrame {
             }
             //Ici
                 choix_joueurs.joueurs.get(id_joueur).setPos(11);
-                Partie_Monopoly.Sedeplacer(choix_joueurs.joueurs.get(id_joueur),choix_joueurs.joueurs.get(id_joueur).getPos());
+                Partie_Monopoly.Sedeplacer(choix_joueurs.joueurs.get(id_joueur));
                 VientApartirDuprison=true;
            //Fin ici
             jButton2.setVisible(false);
@@ -246,7 +246,7 @@ if(position!=11 && position!=21 && position!=31 && position!=3 && position!=18 &
 
             
 
-            if((t.getClass()).equals("class Terrain")){
+            if((t.getClass()).toString().equals("class Terrain")){
                 Terrain t1=(Terrain)t;
                 if(id_joueur==1){
                     jLabel1.setText(choix_joueurs.joueurs.get(1).getNom()+"=== "+ t1.getLoyer0() +" M ===>"+choix_joueurs.joueurs.get(0).getNom());
@@ -265,7 +265,7 @@ if(position!=11 && position!=21 && position!=31 && position!=3 && position!=18 &
           }
           
           ////////////////////////////
-              if((t.getClass()).equals("class Gare")){
+              if((t.getClass()).toString().equals("class Gare")){
                 Gare g=(Gare)t;
                 if(id_joueur==1){
                     jLabel1.setText(choix_joueurs.joueurs.get(1).getNom()+"=== "+ g.getLoyer1() +" M ===>"+choix_joueurs.joueurs.get(0).getNom());
@@ -286,7 +286,7 @@ if(position!=11 && position!=21 && position!=31 && position!=3 && position!=18 &
 
             ////////////\\\\\\\\\\\\\\\
 
-                if((t.getClass()).equals("class ServicePublic")){
+                if((t.getClass()).toString().equals("class ServicePublic")){
                 //Somme des dés * 4
                     int val=Partie_Monopoly.val_somme_de*4;
                 if(id_joueur==1){

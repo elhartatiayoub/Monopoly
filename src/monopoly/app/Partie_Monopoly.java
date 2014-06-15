@@ -10,10 +10,6 @@
  */
 package monopoly.app;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
-
 /**
  *
  *
@@ -3208,11 +3204,30 @@ public class Partie_Monopoly extends javax.swing.JFrame {
             solde_joueur_2.setText("" + choix_joueurs.joueurs.get(1).getSolde());
             nom_joueur2.setVisible(true);
             solde_joueur_2.setVisible(true);
-
-            jLabelPion_1_1.setVisible(true);
-            jLabelPion_1_2.setVisible(true);
+            
+            jLabelPion_1_1.setVisible(false);
+            jLabelPion_1_2.setVisible(false);
             jLabelPion_1_3.setVisible(false);
             jLabelPion_1_4.setVisible(false);
+            
+            if(choix_joueurs.joueurs.get(0).getIcone()==1)
+                jLabelPion_1_1.setVisible(true);
+            if(choix_joueurs.joueurs.get(0).getIcone()==2)
+                jLabelPion_1_2.setVisible(true);
+            if(choix_joueurs.joueurs.get(0).getIcone()==3)
+                jLabelPion_1_3.setVisible(true);
+            if(choix_joueurs.joueurs.get(0).getIcone()==4)
+                jLabelPion_1_4.setVisible(true);
+            
+            if(choix_joueurs.joueurs.get(1).getIcone()==1)
+                jLabelPion_1_1.setVisible(true);
+            if(choix_joueurs.joueurs.get(1).getIcone()==2)
+                jLabelPion_1_2.setVisible(true);
+            if(choix_joueurs.joueurs.get(1).getIcone()==3)
+                jLabelPion_1_3.setVisible(true);
+            if(choix_joueurs.joueurs.get(1).getIcone()==4)
+                jLabelPion_1_4.setVisible(true);
+            
 
         }
 
@@ -3236,10 +3251,37 @@ public class Partie_Monopoly extends javax.swing.JFrame {
             nom_joueur3.setVisible(true);
             solde_joueur_3.setVisible(true);
             
-            jLabelPion_1_1.setVisible(true);
-            jLabelPion_1_2.setVisible(true);
-            jLabelPion_1_3.setVisible(true);
+            jLabelPion_1_1.setVisible(false);
+            jLabelPion_1_2.setVisible(false);
+            jLabelPion_1_3.setVisible(false);
             jLabelPion_1_4.setVisible(false);
+            
+            if(choix_joueurs.joueurs.get(0).getIcone()==1)
+                jLabelPion_1_1.setVisible(true);
+            if(choix_joueurs.joueurs.get(0).getIcone()==2)
+                jLabelPion_1_2.setVisible(true);
+            if(choix_joueurs.joueurs.get(0).getIcone()==3)
+                jLabelPion_1_3.setVisible(true);
+            if(choix_joueurs.joueurs.get(0).getIcone()==4)
+                jLabelPion_1_4.setVisible(true);
+            
+            if(choix_joueurs.joueurs.get(1).getIcone()==1)
+                jLabelPion_1_1.setVisible(true);
+            if(choix_joueurs.joueurs.get(1).getIcone()==2)
+                jLabelPion_1_2.setVisible(true);
+            if(choix_joueurs.joueurs.get(1).getIcone()==3)
+                jLabelPion_1_3.setVisible(true);
+            if(choix_joueurs.joueurs.get(1).getIcone()==4)
+                jLabelPion_1_4.setVisible(true);
+            
+            if(choix_joueurs.joueurs.get(2).getIcone()==1)
+                jLabelPion_1_1.setVisible(true);
+            if(choix_joueurs.joueurs.get(2).getIcone()==2)
+                jLabelPion_1_2.setVisible(true);
+            if(choix_joueurs.joueurs.get(2).getIcone()==3)
+                jLabelPion_1_3.setVisible(true);
+            if(choix_joueurs.joueurs.get(2).getIcone()==4)
+                jLabelPion_1_4.setVisible(true);
 
         }
 
@@ -3268,10 +3310,46 @@ public class Partie_Monopoly extends javax.swing.JFrame {
             nom_joueur4.setVisible(true);
             solde_joueur_4.setVisible(true);
 
-            jLabelPion_1_1.setVisible(true);
-            jLabelPion_1_2.setVisible(true);
-            jLabelPion_1_3.setVisible(true);
-            jLabelPion_1_4.setVisible(true);
+            jLabelPion_1_1.setVisible(false);
+            jLabelPion_1_2.setVisible(false);
+            jLabelPion_1_3.setVisible(false);
+            jLabelPion_1_4.setVisible(false);
+            
+            if(choix_joueurs.joueurs.get(0).getIcone()==1)
+                jLabelPion_1_1.setVisible(true);
+            if(choix_joueurs.joueurs.get(0).getIcone()==2)
+                jLabelPion_1_2.setVisible(true);
+            if(choix_joueurs.joueurs.get(0).getIcone()==3)
+                jLabelPion_1_3.setVisible(true);
+            if(choix_joueurs.joueurs.get(0).getIcone()==4)
+                jLabelPion_1_4.setVisible(true);
+            
+            if(choix_joueurs.joueurs.get(1).getIcone()==1)
+                jLabelPion_1_1.setVisible(true);
+            if(choix_joueurs.joueurs.get(1).getIcone()==2)
+                jLabelPion_1_2.setVisible(true);
+            if(choix_joueurs.joueurs.get(1).getIcone()==3)
+                jLabelPion_1_3.setVisible(true);
+            if(choix_joueurs.joueurs.get(1).getIcone()==4)
+                jLabelPion_1_4.setVisible(true);
+            
+            if(choix_joueurs.joueurs.get(2).getIcone()==1)
+                jLabelPion_1_1.setVisible(true);
+            if(choix_joueurs.joueurs.get(2).getIcone()==2)
+                jLabelPion_1_2.setVisible(true);
+            if(choix_joueurs.joueurs.get(2).getIcone()==3)
+                jLabelPion_1_3.setVisible(true);
+            if(choix_joueurs.joueurs.get(2).getIcone()==4)
+                jLabelPion_1_4.setVisible(true);
+            
+            if(choix_joueurs.joueurs.get(3).getIcone()==1)
+                jLabelPion_1_1.setVisible(true);
+            if(choix_joueurs.joueurs.get(3).getIcone()==2)
+                jLabelPion_1_2.setVisible(true);
+            if(choix_joueurs.joueurs.get(3).getIcone()==3)
+                jLabelPion_1_3.setVisible(true);
+            if(choix_joueurs.joueurs.get(3).getIcone()==4)
+                jLabelPion_1_4.setVisible(true);
         }
 
         for (int i = 0; i < choix_joueurs.joueurs.size(); i++) {
