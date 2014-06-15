@@ -40,6 +40,7 @@ public class choix_joueurs extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox();
@@ -70,7 +71,7 @@ public class choix_joueurs extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(137, 230, 110, 23);
+        jButton1.setBounds(130, 210, 110, 23);
 
         jButton2.setText("Commencer");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +80,7 @@ public class choix_joueurs extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(270, 230, 110, 23);
+        jButton2.setBounds(270, 210, 110, 23);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aucun", "2 joueurs", "3 joueurs", "4 joueurs" }));
         jComboBox1.addItemListener(new java.awt.event.ItemListener() {
@@ -101,27 +102,27 @@ public class choix_joueurs extends javax.swing.JFrame {
 
         jLabel2.setText("Joueur N° 1 :");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(40, 60, 82, 14);
+        jLabel2.setBounds(130, 70, 82, 14);
 
         jLabel3.setText("Joueur N° 2 :");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(40, 90, 82, 14);
+        jLabel3.setBounds(130, 100, 82, 14);
 
         jLabel4.setText("Joueur N° 3 :");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(40, 120, 82, 14);
+        jLabel4.setBounds(130, 130, 82, 14);
 
         jLabel5.setText("Joueur N° 4 :");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(40, 150, 82, 14);
+        jLabel5.setBounds(130, 160, 82, 14);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(120, 60, 168, 20);
+        jTextField1.setBounds(210, 70, 168, 20);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(120, 90, 168, 20);
+        jTextField2.setBounds(210, 100, 168, 20);
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(120, 120, 168, 20);
+        jTextField3.setBounds(210, 130, 168, 20);
         getContentPane().add(jTextField4);
-        jTextField4.setBounds(120, 150, 168, 20);
+        jTextField4.setBounds(210, 160, 168, 20);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/im2.png"))); // NOI18N
         getContentPane().add(jLabel6);
@@ -330,6 +331,7 @@ public class choix_joueurs extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox jComboBox1;
