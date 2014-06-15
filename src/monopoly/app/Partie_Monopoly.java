@@ -8,7 +8,6 @@
  *
  * Created on 3 juin 2011, 23:32:10
  */
-
 package monopoly.app;
 
 import java.util.logging.Level;
@@ -17,526 +16,519 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * 
+ *
  */
 public class Partie_Monopoly extends javax.swing.JFrame {
-
 
     public static int RoleCourant;
 
     public static int val_somme_de;
 
-    /** Creates new form Partie_Monopoly */
+    /**
+     * Creates new form Partie_Monopoly
+     */
     public Partie_Monopoly() {
         initComponents();
     }
 
-    
-    public int getNouvellePosition(int anc_pos,int sommeValDes){
+    public int getNouvellePosition(int anc_pos, int sommeValDes) {
 
-        int newPosition=anc_pos+sommeValDes;
+        int newPosition = anc_pos + sommeValDes;
 
-        if(newPosition<40){
+        if (newPosition < 40) {
             return newPosition;
+        } else {
+
+            choix_joueurs.joueurs.get(RoleCourant).setSolde((int) (choix_joueurs.joueurs.get(RoleCourant).getSolde()) + 200);
+
+            if (RoleCourant == 0) {
+                solde_joueur_1.setText("" + choix_joueurs.joueurs.get(RoleCourant).getSolde());
+            }
+
+            if (RoleCourant == 1) {
+                solde_joueur_2.setText("" + choix_joueurs.joueurs.get(RoleCourant).getSolde());
+            }
+
+            if (RoleCourant == 2) {
+                solde_joueur_3.setText("" + choix_joueurs.joueurs.get(RoleCourant).getSolde());
+            }
+
+            if (RoleCourant == 3) {
+                solde_joueur_4.setText("" + choix_joueurs.joueurs.get(RoleCourant).getSolde());
+            }
+
+            return newPosition - 40;
         }
-        else{
-            
-            choix_joueurs.joueurs.get(RoleCourant).setSolde((int)(choix_joueurs.joueurs.get(RoleCourant).getSolde())+200);
-
-            if(RoleCourant==0){
-                solde_joueur_1.setText(""+choix_joueurs.joueurs.get(RoleCourant).getSolde());
-            }
-
-            if(RoleCourant==1){
-                solde_joueur_2.setText(""+choix_joueurs.joueurs.get(RoleCourant).getSolde());
-            }
-
-            if(RoleCourant==2){
-                solde_joueur_3.setText(""+choix_joueurs.joueurs.get(RoleCourant).getSolde());
-            }
-
-            if(RoleCourant==3){
-                solde_joueur_4.setText(""+choix_joueurs.joueurs.get(RoleCourant).getSolde());
-            }
-
-
-            return newPosition-40;
-        }
-
 
     }
 
+    public static void AfficherProprietaire(int position, int id) {
 
-    public static void AfficherProprietaire(int position,int id){
+        position = position - 1;
 
-                    position=position-1;
+        switch (position) {
 
-                    switch(position){
+            case 1:
+                if (id == 0) {
+                    propr1.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr1.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
 
-                case 1 :
-                        if(id==0){
-                            propr1.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr1.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr1.setVisible(true);
+                propr1.setText(choix_joueurs.joueurs.get(id).getNom());
+                break;
 
-                        }
-                        propr1.setVisible(true);
-                        propr1.setText(choix_joueurs.joueurs.get(id).getNom());
-                    break;
+            case 2:
 
-                case 2 :
+                if (id == 0) {
+                    propr2.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr2.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr2.setVisible(true);
+                propr2.setText(choix_joueurs.joueurs.get(id).getNom());
+                break;
+
+            case 3:
+
+                if (id == 0) {
+                    propr3.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr3.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr3.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr3.setVisible(true);
+                break;
+
+            case 4:
+
+                if (id == 0) {
+                    propr4.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr4.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr4.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr4.setVisible(true);
+                break;
+
+            case 5:
+
+                if (id == 0) {
+                    propr5.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr5.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr5.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr5.setVisible(true);
+                break;
+
+            case 6:
+
+                if (id == 0) {
+                    propr6.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr6.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr6.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr6.setVisible(true);
+                break;
+
+            case 7:
+
+                if (id == 0) {
+                    propr7.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr7.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr7.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr7.setVisible(true);
+                break;
+
+            case 8:
+
+                if (id == 0) {
+                    propr8.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr8.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr8.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr8.setVisible(true);
+                break;
+
+            case 9:
+
+                if (id == 0) {
+                    propr9.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr9.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr9.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr9.setVisible(true);
+                break;
+
+            /*                case 10 :
                         
-                        if(id==0){
-                            propr2.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr2.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr2.setVisible(true);
-                        propr2.setText(choix_joueurs.joueurs.get(id).getNom());
-                    break;
+             if(id==0){
+             propr10.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+             }
+             if(id==1){
+             propr10.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+             }
+             propr10 .setVisible(true);
+             break;*/
+            case 11:
 
-                case 3 :
-                        
-                        if(id==0){
-                            propr3.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr3.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr3.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr3.setVisible(true);
-                    break;
+                if (id == 0) {
+                    propr11.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr11.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr11.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr11.setVisible(true);
+                break;
 
-                case 4 :
-                        
-                        if(id==0){
-                            propr4.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr4.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr4.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr4.setVisible(true);
-                        break;
+            case 12:
 
-                case 5 :
-                        
-                        if(id==0){
-                            propr5.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr5.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr5.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr5.setVisible(true);
-                    break;
+                if (id == 0) {
+                    propr12.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr12.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr12.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr12.setVisible(true);
+                break;
 
-                case 6 :
-                        
-                        if(id==0){
-                            propr6.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr6.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr6.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr6.setVisible(true);
-                        break;
+            case 13:
 
-                case 7 :
-                        
-                        if(id==0){
-                            propr7.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr7.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr7.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr7.setVisible(true);
-                    break;
+                if (id == 0) {
+                    propr13.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr13.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr13.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr13.setVisible(true);
+                break;
 
-                case 8 :
-                        
-                        if(id==0){
-                            propr8.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr8.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr8.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr8.setVisible(true);
-                        break;
+            case 14:
 
-                case 9 :
-                        
-                        if(id==0){
-                            propr9.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr9.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr9.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr9.setVisible(true);
-                    break;
+                if (id == 0) {
+                    propr14.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr14.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr14.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr14.setVisible(true);
+                break;
 
-/*                case 10 :
-                        
-                        if(id==0){
-                            propr10.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr10.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr10 .setVisible(true);
-                        break;*/
+            case 15:
 
-                case 11 :
-                        
-                        if(id==0){
-                            propr11.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr11.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr11.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr11.setVisible(true);
-                        break;
+                if (id == 0) {
+                    propr15.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr15.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr15.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr15.setVisible(true);
+                break;
 
-                case 12 :
-                        
-                        if(id==0){
-                            propr12.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr12.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr12.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr12.setVisible(true);
-                        break;
+            case 16:
 
-                case 13 :
-                        
-                        if(id==0){
-                            propr13.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr13.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr13.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr13.setVisible(true);
-                        break;
+                if (id == 0) {
+                    propr16.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr16.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr16.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr16.setVisible(true);
 
-                case 14 :
-                        
-                        if(id==0){
-                            propr14.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr14.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr14.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr14.setVisible(true);
-                        break;
+                break;
 
-                case 15 :
-                        
-                        if(id==0){
-                            propr15.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr15.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr15.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr15.setVisible(true);
-                    break;
+            case 17:
 
-                case 16 :
-                        
-                        if(id==0){
-                            propr16.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr16.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr16.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr16.setVisible(true);
+                if (id == 0) {
+                    propr17.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr17.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr17.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr17.setVisible(true);
 
-                        break;
+                break;
 
-                case 17 :
-                        
-                        if(id==0){
-                            propr17.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr17.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr17.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr17.setVisible(true);
+            case 18:
 
-                    break;
+                if (id == 0) {
+                    propr18.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr18.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr18.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr18.setVisible(true);
+                break;
 
-                case 18 :
-                        
-                        if(id==0){
-                            propr18.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr18.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr18.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr18.setVisible(true);
-                        break;
+            case 19:
 
-                case 19 :
-                        
-                        if(id==0){
-                            propr19.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr19.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr19.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr19.setVisible(true);
-                        break;
+                if (id == 0) {
+                    propr19.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr19.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr19.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr19.setVisible(true);
+                break;
 
-                case 20 :
-                        
-                        if(id==0){
-                            propr20.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr20.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr20.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr20.setVisible(true);
-                        break;
+            case 20:
 
-                case 21 :
-                        
-                        if(id==0){
-                            propr21.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr21.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr21.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr21.setVisible(true);
-                    break;
+                if (id == 0) {
+                    propr20.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr20.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr20.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr20.setVisible(true);
+                break;
 
-                case 22 :
-                        
-                        if(id==0){
-                            propr22.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr22.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr22.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr22.setVisible(true);
-                        break;
+            case 21:
 
-                case 23 :
-                        
-                        if(id==0){
-                            propr23.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr23.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr23.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr23.setVisible(true);
-                        break;
+                if (id == 0) {
+                    propr21.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr21.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr21.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr21.setVisible(true);
+                break;
 
-                case 24 :
-                        
-                        if(id==0){
-                            propr24.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr24.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr24.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr24.setVisible(true);
-                        break;
+            case 22:
 
-                case 25 :
-                        
-                        if(id==0){
-                            propr25.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr25.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr25.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr25.setVisible(true);
-                        break;
+                if (id == 0) {
+                    propr22.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr22.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr22.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr22.setVisible(true);
+                break;
 
-                case 26 :
-                    
-                        if(id==0){
-                            propr26.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr26.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr26.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr26.setVisible(true);
-                        break;
+            case 23:
 
-                case 27 :
-                        
-                        if(id==0){
-                            propr27.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr27.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr27.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr27.setVisible(true);
-                        break;
+                if (id == 0) {
+                    propr23.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr23.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr23.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr23.setVisible(true);
+                break;
 
-                case 28 :
-                        
-                        if(id==0){
-                            propr28.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr28.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr28.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr28.setVisible(true);
-                        break;
+            case 24:
 
-                case 29 :
-                        
-                        if(id==0){
-                            propr29.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr29.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr29.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr29.setVisible(true);
-                        break;
+                if (id == 0) {
+                    propr24.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr24.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr24.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr24.setVisible(true);
+                break;
 
-                case 31 :
-                        
-                        if(id==0){
-                            propr31.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr31.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr31.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr31.setVisible(true);
-                        break;
+            case 25:
 
-                case 32 :
-                        
-                        if(id==0){
-                            propr32.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr32.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr32.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr32.setVisible(true);
-                        break;
+                if (id == 0) {
+                    propr25.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr25.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr25.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr25.setVisible(true);
+                break;
 
-                case 33 :
-                        
-                        if(id==0){
-                            propr33.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr33.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr33.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr33.setVisible(true);
-                        break;
+            case 26:
 
-                case 34 :
-                        
-                        if(id==0){
-                            propr34.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr34.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr34.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr34.setVisible(true);
-                        break;
+                if (id == 0) {
+                    propr26.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr26.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr26.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr26.setVisible(true);
+                break;
 
-                case 35 :
-                        
-                        if(id==0){
-                            propr35.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr35.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr35.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr35.setVisible(true);
-                        break;
+            case 27:
 
-                case 36 :
-                    
-                        if(id==0){
-                            propr36.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr36.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr37.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr36.setVisible(true);
-                        break;
+                if (id == 0) {
+                    propr27.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr27.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr27.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr27.setVisible(true);
+                break;
 
-                case 37 :
-                        
-                        if(id==0){
-                            propr37.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr37.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr38.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr37.setVisible(true);
-                        break;
+            case 28:
 
-                case 38 :
-                    
-                        if(id==0){
-                            propr38.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr38.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr39.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr38.setVisible(true);
-                        break;
+                if (id == 0) {
+                    propr28.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr28.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr28.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr28.setVisible(true);
+                break;
 
-                case 39 :
-                    
-                        if(id==0){
-                            propr39.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-                        }
-                        if(id==1){
-                            propr39.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-                        }
-                        propr39.setText(choix_joueurs.joueurs.get(id).getNom());
-                        propr39.setVisible(true);
-                        break;
+            case 29:
 
+                if (id == 0) {
+                    propr29.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr29.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr29.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr29.setVisible(true);
+                break;
+
+            case 31:
+
+                if (id == 0) {
+                    propr31.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr31.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr31.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr31.setVisible(true);
+                break;
+
+            case 32:
+
+                if (id == 0) {
+                    propr32.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr32.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr32.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr32.setVisible(true);
+                break;
+
+            case 33:
+
+                if (id == 0) {
+                    propr33.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr33.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr33.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr33.setVisible(true);
+                break;
+
+            case 34:
+
+                if (id == 0) {
+                    propr34.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr34.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr34.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr34.setVisible(true);
+                break;
+
+            case 35:
+
+                if (id == 0) {
+                    propr35.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr35.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr35.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr35.setVisible(true);
+                break;
+
+            case 36:
+
+                if (id == 0) {
+                    propr36.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr36.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr37.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr36.setVisible(true);
+                break;
+
+            case 37:
+
+                if (id == 0) {
+                    propr37.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr37.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr38.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr37.setVisible(true);
+                break;
+
+            case 38:
+
+                if (id == 0) {
+                    propr38.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr38.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr39.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr38.setVisible(true);
+                break;
+
+            case 39:
+
+                if (id == 0) {
+                    propr39.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
+                }
+                if (id == 1) {
+                    propr39.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
+                }
+                propr39.setText(choix_joueurs.joueurs.get(id).getNom());
+                propr39.setVisible(true);
+                break;
 
         }
-        
+
     }
 
-
-    public static void rendreProprietairesInvisible(){
+    public static void rendreProprietairesInvisible() {
 
         propr1.setVisible(false);
         propr2.setVisible(false);
@@ -576,30 +568,27 @@ public class Partie_Monopoly extends javax.swing.JFrame {
         propr38.setVisible(false);
         propr39.setVisible(false);
 
-
     }
 
-        public void getRoleJoueurSuivant(){
-            int id;
-            id=RoleCourant+1;
-            if(id>choix_joueurs.joueurs.size()-1){
-                RoleCourant=0;
-                joueur_courant.setText(choix_joueurs.joueurs.get(RoleCourant).getNom());
-            }
-             else{
-                RoleCourant++;
-                joueur_courant.setText(choix_joueurs.joueurs.get(RoleCourant).getNom());
-             }
+    public void getRoleJoueurSuivant() {
+        int id;
+        id = RoleCourant + 1;
+        if (id > choix_joueurs.joueurs.size() - 1) {
+            RoleCourant = 0;
+            joueur_courant.setText(choix_joueurs.joueurs.get(RoleCourant).getNom());
+        } else {
+            RoleCourant++;
+            joueur_courant.setText(choix_joueurs.joueurs.get(RoleCourant).getNom());
         }
+    }
     //fin préciser le role
 
-        /*public static void Sedeplacer2(Joueur joueur,int NouvellePosition){
-            Sedeplacer(joueur,NouvellePosition);
-        }*/
+    /*public static void Sedeplacer2(Joueur joueur,int NouvellePosition){
+     Sedeplacer(joueur,NouvellePosition);
+     }*/
+    public static void Sedeplacer(Joueur joueur, int NouvellePosition) {
 
-    public static void Sedeplacer(Joueur joueur,int NouvellePosition){
-
-        switch(joueur.getId()){
+        switch (joueur.getId()) {
             case 1:
                 DeplacerJoueur1(joueur);
                 break;
@@ -613,848 +602,846 @@ public class Partie_Monopoly extends javax.swing.JFrame {
                 DeplacerJoueur4(joueur);
                 break;
             default:
-            break;
+                break;
         }
 
-        AfficherCase.position=choix_joueurs.joueurs.get(RoleCourant).getPos();
+        AfficherCase.position = choix_joueurs.joueurs.get(RoleCourant).getPos();
 
-        if(choix_joueurs.joueurs.get(RoleCourant).getPos()!=1){
-                new AfficherCase().setVisible(true);
+        if (choix_joueurs.joueurs.get(RoleCourant).getPos() != 1) {
+            new AfficherCase().setVisible(true);
         }
 
     }
 
+    public static void DeplacerJoueur1(Joueur joueur) {
 
+        switch (joueur.getPos()) {
 
-        public static void DeplacerJoueur1(Joueur joueur){
+            case 1:
+                rendreAllInvisible1();
+                jLabelPion_1_1.setVisible(true);
+                break;
 
-            switch(joueur.getPos()){
+            case 2:
+                rendreAllInvisible1();
+                jLabelPion_2_1.setVisible(true);
+                break;
 
-                case 1 :
-                    rendreAllInvisible1();
-                        jLabelPion_1_1.setVisible(true);
-                    break;
+            case 3:
+                rendreAllInvisible1();
+                jLabelPion_3_1.setVisible(true);
+                break;
 
-                case 2 :
-                    rendreAllInvisible1();
-                        jLabelPion_2_1.setVisible(true);
-                    break;
+            case 4:
+                rendreAllInvisible1();
+                jLabelPion_4_1.setVisible(true);
+                break;
 
-                case 3 :
-                    rendreAllInvisible1();
-                        jLabelPion_3_1.setVisible(true);
-                    break;
+            case 5:
+                rendreAllInvisible1();
+                jLabelPion_5_1.setVisible(true);
+                break;
 
-                case 4 :
-                    rendreAllInvisible1();
-                        jLabelPion_4_1.setVisible(true);
-                    break;
+            case 6:
+                rendreAllInvisible1();
+                jLabelPion_6_1.setVisible(true);
+                break;
 
-                case 5 :
-                    rendreAllInvisible1();
-                        jLabelPion_5_1.setVisible(true);
-                    break;
+            case 7:
+                rendreAllInvisible1();
+                jLabelPion_7_1.setVisible(true);
+                break;
 
-                case 6 :
-                    rendreAllInvisible1();
-                        jLabelPion_6_1.setVisible(true);
-                    break;
+            case 8:
+                rendreAllInvisible1();
+                jLabelPion_8_1.setVisible(true);
+                break;
 
-                case 7 :
-                    rendreAllInvisible1();
-                        jLabelPion_7_1.setVisible(true);
-                    break;
+            case 9:
+                rendreAllInvisible1();
+                jLabelPion_9_1.setVisible(true);
+                break;
 
-                case 8 :
-                    rendreAllInvisible1();
-                        jLabelPion_8_1.setVisible(true);
-                    break;
+            case 10:
+                rendreAllInvisible1();
+                jLabelPion_10_1.setVisible(true);
+                break;
 
-                case 9 :
-                    rendreAllInvisible1();
-                        jLabelPion_9_1.setVisible(true);
-                    break;
+            case 11:
+                rendreAllInvisible1();
+                jLabelPion_11_1.setVisible(true);
+                break;
 
-                case 10 :
-                    rendreAllInvisible1();
-                        jLabelPion_10_1.setVisible(true);
-                    break;
+            case 12:
+                rendreAllInvisible1();
+                jLabelPion_12_1.setVisible(true);
+                break;
 
-                case 11 :
-                    rendreAllInvisible1();
-                        jLabelPion_11_1.setVisible(true);
-                    break;
+            case 13:
+                rendreAllInvisible1();
+                jLabelPion_13_1.setVisible(true);
+                break;
 
-                case 12 :
-                    rendreAllInvisible1();
-                        jLabelPion_12_1.setVisible(true);
-                    break;
+            case 14:
+                rendreAllInvisible1();
+                jLabelPion_14_1.setVisible(true);
+                break;
 
-                case 13 :
-                    rendreAllInvisible1();
-                        jLabelPion_13_1.setVisible(true);
-                    break;
+            case 15:
+                rendreAllInvisible1();
+                jLabelPion_15_1.setVisible(true);
+                break;
 
-                case 14 :
-                    rendreAllInvisible1();
-                        jLabelPion_14_1.setVisible(true);
-                    break;
+            case 16:
+                rendreAllInvisible1();
+                jLabelPion_16_1.setVisible(true);
+                break;
 
-                case 15 :
-                    rendreAllInvisible1();
-                        jLabelPion_15_1.setVisible(true);
-                    break;
+            case 17:
+                rendreAllInvisible1();
+                jLabelPion_17_1.setVisible(true);
+                break;
 
-                case 16 :
-                    rendreAllInvisible1();
-                        jLabelPion_16_1.setVisible(true);
-                    break;
+            case 18:
+                rendreAllInvisible1();
+                jLabelPion_18_1.setVisible(true);
+                break;
 
-                case 17 :
-                    rendreAllInvisible1();
-                        jLabelPion_17_1.setVisible(true);
-                    break;
+            case 19:
+                rendreAllInvisible1();
+                jLabelPion_19_1.setVisible(true);
+                break;
 
-                case 18 :
-                    rendreAllInvisible1();
-                        jLabelPion_18_1.setVisible(true);
-                    break;
+            case 20:
+                rendreAllInvisible1();
+                jLabelPion_20_1.setVisible(true);
+                break;
 
-                case 19 :
-                    rendreAllInvisible1();
-                        jLabelPion_19_1.setVisible(true);
-                    break;
+            case 21:
+                rendreAllInvisible1();
+                jLabelPion_21_1.setVisible(true);
+                break;
 
-                case 20 :
-                    rendreAllInvisible1();
-                        jLabelPion_20_1.setVisible(true);
-                    break;
+            case 22:
+                rendreAllInvisible1();
+                jLabelPion_22_1.setVisible(true);
+                break;
 
-                case 21 :
-                    rendreAllInvisible1();
-                        jLabelPion_21_1.setVisible(true);
-                    break;
+            case 23:
+                rendreAllInvisible1();
+                jLabelPion_23_1.setVisible(true);
+                break;
 
-                case 22 :
-                    rendreAllInvisible1();
-                        jLabelPion_22_1.setVisible(true);
-                    break;
+            case 24:
+                rendreAllInvisible1();
+                jLabelPion_24_1.setVisible(true);
+                break;
 
-                case 23 :
-                    rendreAllInvisible1();
-                        jLabelPion_23_1.setVisible(true);
-                    break;
+            case 25:
+                rendreAllInvisible1();
+                jLabelPion_25_1.setVisible(true);
+                break;
 
-                case 24 :
-                    rendreAllInvisible1();
-                        jLabelPion_24_1.setVisible(true);
-                    break;
+            case 26:
+                rendreAllInvisible1();
+                jLabelPion_26_1.setVisible(true);
+                break;
 
-                case 25 :
-                    rendreAllInvisible1();
-                        jLabelPion_25_1.setVisible(true);
-                    break;
+            case 27:
+                rendreAllInvisible1();
+                jLabelPion_27_1.setVisible(true);
+                break;
 
-                case 26 :
-                    rendreAllInvisible1();
-                        jLabelPion_26_1.setVisible(true);
-                    break;
+            case 28:
+                rendreAllInvisible1();
+                jLabelPion_28_1.setVisible(true);
+                break;
 
-                case 27 :
-                    rendreAllInvisible1();
-                        jLabelPion_27_1.setVisible(true);
-                    break;
+            case 29:
+                rendreAllInvisible1();
+                jLabelPion_29_1.setVisible(true);
+                break;
 
-                case 28 :
-                    rendreAllInvisible1();
-                        jLabelPion_28_1.setVisible(true);
-                    break;
+            case 30:
+                rendreAllInvisible1();
+                jLabelPion_30_1.setVisible(true);
+                break;
 
-                case 29 :
-                    rendreAllInvisible1();
-                        jLabelPion_29_1.setVisible(true);
-                    break;
+            case 31:
+                rendreAllInvisible1();
+                jLabelPion_31_1.setVisible(true);
+                break;
 
-                case 30 :
-                    rendreAllInvisible1();
-                        jLabelPion_30_1.setVisible(true);
-                    break;
+            case 32:
+                rendreAllInvisible1();
+                jLabelPion_32_1.setVisible(true);
+                break;
 
-                case 31 :
-                    rendreAllInvisible1();
-                        jLabelPion_31_1.setVisible(true);
-                    break;
+            case 33:
+                rendreAllInvisible1();
+                jLabelPion_33_1.setVisible(true);
+                break;
 
-                case 32 :
-                    rendreAllInvisible1();
-                        jLabelPion_32_1.setVisible(true);
-                    break;
+            case 34:
+                rendreAllInvisible1();
+                jLabelPion_34_1.setVisible(true);
+                break;
 
-                case 33 :
-                    rendreAllInvisible1();
-                        jLabelPion_33_1.setVisible(true);
-                    break;
+            case 35:
+                rendreAllInvisible1();
+                jLabelPion_35_1.setVisible(true);
+                break;
 
-                case 34 :
-                    rendreAllInvisible1();
-                        jLabelPion_34_1.setVisible(true);
-                    break;
+            case 36:
+                rendreAllInvisible1();
+                jLabelPion_36_1.setVisible(true);
+                break;
 
-                case 35 :
-                    rendreAllInvisible1();
-                        jLabelPion_35_1.setVisible(true);
-                    break;
+            case 37:
+                rendreAllInvisible1();
+                jLabelPion_37_1.setVisible(true);
+                break;
 
-                case 36 :
-                    rendreAllInvisible1();
-                        jLabelPion_36_1.setVisible(true);
-                    break;
+            case 38:
+                rendreAllInvisible1();
+                jLabelPion_38_1.setVisible(true);
+                break;
 
-                case 37 :
-                    rendreAllInvisible1();
-                        jLabelPion_37_1.setVisible(true);
-                    break;
+            case 39:
+                rendreAllInvisible1();
+                jLabelPion_39_1.setVisible(true);
+                break;
 
-                case 38 :
-                    rendreAllInvisible1();
-                        jLabelPion_38_1.setVisible(true);
-                    break;
-
-                case 39 :
-                    rendreAllInvisible1();
-                        jLabelPion_39_1.setVisible(true);
-                    break;
-
-                case 40 :
-                    rendreAllInvisible1();
-                        jLabelPion_40_1.setVisible(true);
-                    break;
+            case 40:
+                rendreAllInvisible1();
+                jLabelPion_40_1.setVisible(true);
+                break;
 
         }
     }
 
-    public static void DeplacerJoueur2(Joueur joueur){
+    public static void DeplacerJoueur2(Joueur joueur) {
 
-            switch(joueur.getPos()){
+        switch (joueur.getPos()) {
 
-                case 1 :
-                    rendreAllInvisible2();
-                        jLabelPion_1_2.setVisible(true);
-                    break;
+            case 1:
+                rendreAllInvisible2();
+                jLabelPion_1_2.setVisible(true);
+                break;
 
-                case 2 :
-                    rendreAllInvisible2();
-                        jLabelPion_2_2.setVisible(true);
-                    break;
+            case 2:
+                rendreAllInvisible2();
+                jLabelPion_2_2.setVisible(true);
+                break;
 
-                case 3 :
-                    rendreAllInvisible2();
-                        jLabelPion_3_2.setVisible(true);
-                    break;
+            case 3:
+                rendreAllInvisible2();
+                jLabelPion_3_2.setVisible(true);
+                break;
 
-                case 4 :
-                    rendreAllInvisible2();
-                        jLabelPion_4_2.setVisible(true);
-                    break;
+            case 4:
+                rendreAllInvisible2();
+                jLabelPion_4_2.setVisible(true);
+                break;
 
-                case 5 :
-                    rendreAllInvisible2();
-                        jLabelPion_5_2.setVisible(true);
-                    break;
+            case 5:
+                rendreAllInvisible2();
+                jLabelPion_5_2.setVisible(true);
+                break;
 
-                case 6 :
-                    rendreAllInvisible2();
-                        jLabelPion_6_2.setVisible(true);
-                    break;
+            case 6:
+                rendreAllInvisible2();
+                jLabelPion_6_2.setVisible(true);
+                break;
 
-                case 7 :
-                    rendreAllInvisible2();
-                        jLabelPion_7_2.setVisible(true);
-                    break;
+            case 7:
+                rendreAllInvisible2();
+                jLabelPion_7_2.setVisible(true);
+                break;
 
-                case 8 :
-                    rendreAllInvisible2();
-                        jLabelPion_8_2.setVisible(true);
-                    break;
+            case 8:
+                rendreAllInvisible2();
+                jLabelPion_8_2.setVisible(true);
+                break;
 
-                case 9 :
-                    rendreAllInvisible2();
-                        jLabelPion_9_2.setVisible(true);
-                    break;
+            case 9:
+                rendreAllInvisible2();
+                jLabelPion_9_2.setVisible(true);
+                break;
 
-                case 10 :
-                    rendreAllInvisible2();
-                        jLabelPion_10_2.setVisible(true);
-                    break;
+            case 10:
+                rendreAllInvisible2();
+                jLabelPion_10_2.setVisible(true);
+                break;
 
-                case 11 :
-                    rendreAllInvisible2();
-                        jLabelPion_11_2.setVisible(true);
-                    break;
+            case 11:
+                rendreAllInvisible2();
+                jLabelPion_11_2.setVisible(true);
+                break;
 
-                case 12 :
-                    rendreAllInvisible2();
-                        jLabelPion_12_2.setVisible(true);
-                    break;
+            case 12:
+                rendreAllInvisible2();
+                jLabelPion_12_2.setVisible(true);
+                break;
 
-                case 13 :
-                    rendreAllInvisible2();
-                        jLabelPion_13_2.setVisible(true);
-                    break;
+            case 13:
+                rendreAllInvisible2();
+                jLabelPion_13_2.setVisible(true);
+                break;
 
-                case 14 :
-                    rendreAllInvisible2();
-                        jLabelPion_14_2.setVisible(true);
-                    break;
+            case 14:
+                rendreAllInvisible2();
+                jLabelPion_14_2.setVisible(true);
+                break;
 
-                case 15 :
-                    rendreAllInvisible2();
-                        jLabelPion_15_2.setVisible(true);
-                    break;
+            case 15:
+                rendreAllInvisible2();
+                jLabelPion_15_2.setVisible(true);
+                break;
 
-                case 16 :
-                    rendreAllInvisible2();
-                        jLabelPion_16_2.setVisible(true);
-                    break;
+            case 16:
+                rendreAllInvisible2();
+                jLabelPion_16_2.setVisible(true);
+                break;
 
-                case 17 :
-                    rendreAllInvisible2();
-                        jLabelPion_17_2.setVisible(true);
-                    break;
+            case 17:
+                rendreAllInvisible2();
+                jLabelPion_17_2.setVisible(true);
+                break;
 
-                case 18 :
-                    rendreAllInvisible2();
-                        jLabelPion_18_2.setVisible(true);
-                    break;
+            case 18:
+                rendreAllInvisible2();
+                jLabelPion_18_2.setVisible(true);
+                break;
 
-                case 19 :
-                    rendreAllInvisible2();
-                        jLabelPion_19_2.setVisible(true);
-                    break;
+            case 19:
+                rendreAllInvisible2();
+                jLabelPion_19_2.setVisible(true);
+                break;
 
-                case 20 :
-                    rendreAllInvisible2();
-                        jLabelPion_20_2.setVisible(true);
-                    break;
+            case 20:
+                rendreAllInvisible2();
+                jLabelPion_20_2.setVisible(true);
+                break;
 
-                case 21 :
-                    rendreAllInvisible2();
-                        jLabelPion_21_2.setVisible(true);
-                    break;
+            case 21:
+                rendreAllInvisible2();
+                jLabelPion_21_2.setVisible(true);
+                break;
 
-                case 22 :
-                    rendreAllInvisible2();
-                        jLabelPion_22_2.setVisible(true);
-                    break;
+            case 22:
+                rendreAllInvisible2();
+                jLabelPion_22_2.setVisible(true);
+                break;
 
-                case 23 :
-                    rendreAllInvisible2();
-                        jLabelPion_23_2.setVisible(true);
-                    break;
+            case 23:
+                rendreAllInvisible2();
+                jLabelPion_23_2.setVisible(true);
+                break;
 
-                case 24 :
-                    rendreAllInvisible2();
-                        jLabelPion_24_2.setVisible(true);
-                    break;
+            case 24:
+                rendreAllInvisible2();
+                jLabelPion_24_2.setVisible(true);
+                break;
 
-                case 25 :
-                    rendreAllInvisible2();
-                        jLabelPion_25_2.setVisible(true);
-                    break;
+            case 25:
+                rendreAllInvisible2();
+                jLabelPion_25_2.setVisible(true);
+                break;
 
-                case 26 :
-                    rendreAllInvisible2();
-                        jLabelPion_26_2.setVisible(true);
-                    break;
+            case 26:
+                rendreAllInvisible2();
+                jLabelPion_26_2.setVisible(true);
+                break;
 
-                case 27 :
-                    rendreAllInvisible2();
-                        jLabelPion_27_2.setVisible(true);
-                    break;
+            case 27:
+                rendreAllInvisible2();
+                jLabelPion_27_2.setVisible(true);
+                break;
 
-                case 28 :
-                    rendreAllInvisible2();
-                        jLabelPion_28_2.setVisible(true);
-                    break;
+            case 28:
+                rendreAllInvisible2();
+                jLabelPion_28_2.setVisible(true);
+                break;
 
-                case 29 :
-                    rendreAllInvisible2();
-                        jLabelPion_29_2.setVisible(true);
-                    break;
+            case 29:
+                rendreAllInvisible2();
+                jLabelPion_29_2.setVisible(true);
+                break;
 
-                case 30 :
-                    rendreAllInvisible2();
-                        jLabelPion_30_2.setVisible(true);
-                    break;
+            case 30:
+                rendreAllInvisible2();
+                jLabelPion_30_2.setVisible(true);
+                break;
 
-                case 31 :
-                    rendreAllInvisible2();
-                        jLabelPion_31_2.setVisible(true);
-                    break;
+            case 31:
+                rendreAllInvisible2();
+                jLabelPion_31_2.setVisible(true);
+                break;
 
-                case 32 :
-                    rendreAllInvisible2();
-                        jLabelPion_32_2.setVisible(true);
-                    break;
+            case 32:
+                rendreAllInvisible2();
+                jLabelPion_32_2.setVisible(true);
+                break;
 
-                case 33 :
-                    rendreAllInvisible2();
-                        jLabelPion_33_2.setVisible(true);
-                    break;
+            case 33:
+                rendreAllInvisible2();
+                jLabelPion_33_2.setVisible(true);
+                break;
 
-                case 34 :
-                    rendreAllInvisible2();
-                        jLabelPion_34_2.setVisible(true);
-                    break;
+            case 34:
+                rendreAllInvisible2();
+                jLabelPion_34_2.setVisible(true);
+                break;
 
-                case 35 :
-                    rendreAllInvisible2();
-                        jLabelPion_35_2.setVisible(true);
-                    break;
+            case 35:
+                rendreAllInvisible2();
+                jLabelPion_35_2.setVisible(true);
+                break;
 
-                case 36 :
-                    rendreAllInvisible2();
-                        jLabelPion_36_2.setVisible(true);
-                    break;
+            case 36:
+                rendreAllInvisible2();
+                jLabelPion_36_2.setVisible(true);
+                break;
 
-                case 37 :
-                    rendreAllInvisible2();
-                        jLabelPion_37_2.setVisible(true);
-                    break;
+            case 37:
+                rendreAllInvisible2();
+                jLabelPion_37_2.setVisible(true);
+                break;
 
-                case 38 :
-                    rendreAllInvisible2();
-                        jLabelPion_38_2.setVisible(true);
-                    break;
+            case 38:
+                rendreAllInvisible2();
+                jLabelPion_38_2.setVisible(true);
+                break;
 
-                case 39 :
-                    rendreAllInvisible2();
-                        jLabelPion_39_2.setVisible(true);
-                    break;
+            case 39:
+                rendreAllInvisible2();
+                jLabelPion_39_2.setVisible(true);
+                break;
 
-                case 40 :
-                    rendreAllInvisible2();
-                        jLabelPion_40_2.setVisible(true);
-                    break;
+            case 40:
+                rendreAllInvisible2();
+                jLabelPion_40_2.setVisible(true);
+                break;
 
         }
     }
 
-    public static void DeplacerJoueur3(Joueur joueur){
+    public static void DeplacerJoueur3(Joueur joueur) {
 
-            switch(joueur.getPos()){
+        switch (joueur.getPos()) {
 
-                case 1 :
-                    rendreAllInvisible3();
-                        jLabelPion_1_3.setVisible(true);
-                    break;
+            case 1:
+                rendreAllInvisible3();
+                jLabelPion_1_3.setVisible(true);
+                break;
 
-                case 2 :
-                    rendreAllInvisible3();
-                        jLabelPion_2_3.setVisible(true);
-                    break;
+            case 2:
+                rendreAllInvisible3();
+                jLabelPion_2_3.setVisible(true);
+                break;
 
-                case 3 :
-                    rendreAllInvisible3();
-                        jLabelPion_3_3.setVisible(true);
-                    break;
+            case 3:
+                rendreAllInvisible3();
+                jLabelPion_3_3.setVisible(true);
+                break;
 
-                case 4 :
-                    rendreAllInvisible3();
-                        jLabelPion_4_3.setVisible(true);
-                    break;
+            case 4:
+                rendreAllInvisible3();
+                jLabelPion_4_3.setVisible(true);
+                break;
 
-                case 5 :
-                    rendreAllInvisible3();
-                        jLabelPion_5_3.setVisible(true);
-                    break;
+            case 5:
+                rendreAllInvisible3();
+                jLabelPion_5_3.setVisible(true);
+                break;
 
-                case 6 :
-                    rendreAllInvisible3();
-                        jLabelPion_6_3.setVisible(true);
-                    break;
+            case 6:
+                rendreAllInvisible3();
+                jLabelPion_6_3.setVisible(true);
+                break;
 
-                case 7 :
-                    rendreAllInvisible3();
-                        jLabelPion_7_3.setVisible(true);
-                    break;
+            case 7:
+                rendreAllInvisible3();
+                jLabelPion_7_3.setVisible(true);
+                break;
 
-                case 8 :
-                    rendreAllInvisible3();
-                        jLabelPion_8_3.setVisible(true);
-                    break;
+            case 8:
+                rendreAllInvisible3();
+                jLabelPion_8_3.setVisible(true);
+                break;
 
-                case 9 :
-                    rendreAllInvisible3();
-                        jLabelPion_9_3.setVisible(true);
-                    break;
+            case 9:
+                rendreAllInvisible3();
+                jLabelPion_9_3.setVisible(true);
+                break;
 
-                case 10 :
-                    rendreAllInvisible3();
-                        jLabelPion_10_3.setVisible(true);
-                    break;
+            case 10:
+                rendreAllInvisible3();
+                jLabelPion_10_3.setVisible(true);
+                break;
 
-                case 11 :
-                    rendreAllInvisible3();
-                        jLabelPion_11_3.setVisible(true);
-                    break;
+            case 11:
+                rendreAllInvisible3();
+                jLabelPion_11_3.setVisible(true);
+                break;
 
-                case 12 :
-                    rendreAllInvisible3();
-                        jLabelPion_12_3.setVisible(true);
-                    break;
+            case 12:
+                rendreAllInvisible3();
+                jLabelPion_12_3.setVisible(true);
+                break;
 
-                case 13 :
-                    rendreAllInvisible3();
-                        jLabelPion_13_3.setVisible(true);
-                    break;
+            case 13:
+                rendreAllInvisible3();
+                jLabelPion_13_3.setVisible(true);
+                break;
 
-                case 14 :
-                    rendreAllInvisible3();
-                        jLabelPion_14_3.setVisible(true);
-                    break;
+            case 14:
+                rendreAllInvisible3();
+                jLabelPion_14_3.setVisible(true);
+                break;
 
-                case 15 :
-                    rendreAllInvisible3();
-                        jLabelPion_15_3.setVisible(true);
-                    break;
+            case 15:
+                rendreAllInvisible3();
+                jLabelPion_15_3.setVisible(true);
+                break;
 
-                case 16 :
-                    rendreAllInvisible3();
-                        jLabelPion_16_3.setVisible(true);
-                    break;
+            case 16:
+                rendreAllInvisible3();
+                jLabelPion_16_3.setVisible(true);
+                break;
 
-                case 17 :
-                    rendreAllInvisible3();
-                        jLabelPion_17_3.setVisible(true);
-                    break;
+            case 17:
+                rendreAllInvisible3();
+                jLabelPion_17_3.setVisible(true);
+                break;
 
-                case 18 :
-                    rendreAllInvisible3();
-                        jLabelPion_18_3.setVisible(true);
-                    break;
+            case 18:
+                rendreAllInvisible3();
+                jLabelPion_18_3.setVisible(true);
+                break;
 
-                case 19 :
-                    rendreAllInvisible3();
-                        jLabelPion_19_3.setVisible(true);
-                    break;
+            case 19:
+                rendreAllInvisible3();
+                jLabelPion_19_3.setVisible(true);
+                break;
 
-                case 20 :
-                    rendreAllInvisible3();
-                        jLabelPion_20_3.setVisible(true);
-                    break;
+            case 20:
+                rendreAllInvisible3();
+                jLabelPion_20_3.setVisible(true);
+                break;
 
-                case 21 :
-                    rendreAllInvisible3();
-                        jLabelPion_21_3.setVisible(true);
-                    break;
+            case 21:
+                rendreAllInvisible3();
+                jLabelPion_21_3.setVisible(true);
+                break;
 
-                case 22 :
-                    rendreAllInvisible3();
-                        jLabelPion_22_3.setVisible(true);
-                    break;
+            case 22:
+                rendreAllInvisible3();
+                jLabelPion_22_3.setVisible(true);
+                break;
 
-                case 23 :
-                    rendreAllInvisible3();
-                        jLabelPion_23_3.setVisible(true);
-                    break;
+            case 23:
+                rendreAllInvisible3();
+                jLabelPion_23_3.setVisible(true);
+                break;
 
-                case 24 :
-                    rendreAllInvisible3();
-                        jLabelPion_24_3.setVisible(true);
-                    break;
+            case 24:
+                rendreAllInvisible3();
+                jLabelPion_24_3.setVisible(true);
+                break;
 
-                case 25 :
-                    rendreAllInvisible3();
-                        jLabelPion_25_3.setVisible(true);
-                    break;
+            case 25:
+                rendreAllInvisible3();
+                jLabelPion_25_3.setVisible(true);
+                break;
 
-                case 26 :
-                    rendreAllInvisible3();
-                        jLabelPion_26_3.setVisible(true);
-                    break;
+            case 26:
+                rendreAllInvisible3();
+                jLabelPion_26_3.setVisible(true);
+                break;
 
-                case 27 :
-                    rendreAllInvisible3();
-                        jLabelPion_27_3.setVisible(true);
-                    break;
+            case 27:
+                rendreAllInvisible3();
+                jLabelPion_27_3.setVisible(true);
+                break;
 
-                case 28 :
-                    rendreAllInvisible3();
-                        jLabelPion_28_3.setVisible(true);
-                    break;
+            case 28:
+                rendreAllInvisible3();
+                jLabelPion_28_3.setVisible(true);
+                break;
 
-                case 29 :
-                    rendreAllInvisible3();
-                        jLabelPion_29_3.setVisible(true);
-                    break;
+            case 29:
+                rendreAllInvisible3();
+                jLabelPion_29_3.setVisible(true);
+                break;
 
-                case 30 :
-                    rendreAllInvisible3();
-                        jLabelPion_30_3.setVisible(true);
-                    break;
+            case 30:
+                rendreAllInvisible3();
+                jLabelPion_30_3.setVisible(true);
+                break;
 
-                case 31 :
-                    rendreAllInvisible3();
-                        jLabelPion_31_3.setVisible(true);
-                    break;
+            case 31:
+                rendreAllInvisible3();
+                jLabelPion_31_3.setVisible(true);
+                break;
 
-                case 32 :
-                    rendreAllInvisible3();
-                        jLabelPion_32_3.setVisible(true);
-                    break;
+            case 32:
+                rendreAllInvisible3();
+                jLabelPion_32_3.setVisible(true);
+                break;
 
-                case 33 :
-                    rendreAllInvisible3();
-                        jLabelPion_33_3.setVisible(true);
-                    break;
+            case 33:
+                rendreAllInvisible3();
+                jLabelPion_33_3.setVisible(true);
+                break;
 
-                case 34 :
-                    rendreAllInvisible3();
-                        jLabelPion_34_3.setVisible(true);
-                    break;
+            case 34:
+                rendreAllInvisible3();
+                jLabelPion_34_3.setVisible(true);
+                break;
 
-                case 35 :
-                    rendreAllInvisible3();
-                        jLabelPion_35_3.setVisible(true);
-                    break;
+            case 35:
+                rendreAllInvisible3();
+                jLabelPion_35_3.setVisible(true);
+                break;
 
-                case 36 :
-                    rendreAllInvisible3();
-                        jLabelPion_36_3.setVisible(true);
-                    break;
+            case 36:
+                rendreAllInvisible3();
+                jLabelPion_36_3.setVisible(true);
+                break;
 
-                case 37 :
-                    rendreAllInvisible3();
-                        jLabelPion_37_3.setVisible(true);
-                    break;
+            case 37:
+                rendreAllInvisible3();
+                jLabelPion_37_3.setVisible(true);
+                break;
 
-                case 38 :
-                    rendreAllInvisible3();
-                        jLabelPion_38_3.setVisible(true);
-                    break;
+            case 38:
+                rendreAllInvisible3();
+                jLabelPion_38_3.setVisible(true);
+                break;
 
-                case 39 :
-                    rendreAllInvisible3();
-                        jLabelPion_39_3.setVisible(true);
-                    break;
+            case 39:
+                rendreAllInvisible3();
+                jLabelPion_39_3.setVisible(true);
+                break;
 
-                case 40 :
-                    rendreAllInvisible3();
-                        jLabelPion_40_3.setVisible(true);
-                    break;
+            case 40:
+                rendreAllInvisible3();
+                jLabelPion_40_3.setVisible(true);
+                break;
 
         }
     }
-                        
-    public static void DeplacerJoueur4(Joueur joueur){
 
-            switch(joueur.getPos()){
+    public static void DeplacerJoueur4(Joueur joueur) {
 
-                case 1 :
-                    rendreAllInvisible4();
-                        jLabelPion_1_4.setVisible(true);
-                    break;
+        switch (joueur.getPos()) {
 
-                case 2 :
-                    rendreAllInvisible4();
-                        jLabelPion_2_4.setVisible(true);
-                    break;
+            case 1:
+                rendreAllInvisible4();
+                jLabelPion_1_4.setVisible(true);
+                break;
 
-                case 3 :
-                    rendreAllInvisible4();
-                        jLabelPion_3_4.setVisible(true);
-                    break;
+            case 2:
+                rendreAllInvisible4();
+                jLabelPion_2_4.setVisible(true);
+                break;
 
-                case 4 :
-                    rendreAllInvisible4();
-                        jLabelPion_4_4.setVisible(true);
-                    break;
+            case 3:
+                rendreAllInvisible4();
+                jLabelPion_3_4.setVisible(true);
+                break;
 
-                case 5 :
-                    rendreAllInvisible4();
-                        jLabelPion_5_4.setVisible(true);
-                    break;
+            case 4:
+                rendreAllInvisible4();
+                jLabelPion_4_4.setVisible(true);
+                break;
 
-                case 6 :
-                    rendreAllInvisible4();
-                        jLabelPion_6_4.setVisible(true);
-                    break;
+            case 5:
+                rendreAllInvisible4();
+                jLabelPion_5_4.setVisible(true);
+                break;
 
-                case 7 :
-                    rendreAllInvisible4();
-                        jLabelPion_7_4.setVisible(true);
-                    break;
+            case 6:
+                rendreAllInvisible4();
+                jLabelPion_6_4.setVisible(true);
+                break;
 
-                case 8 :
-                    rendreAllInvisible4();
-                        jLabelPion_8_4.setVisible(true);
-                    break;
+            case 7:
+                rendreAllInvisible4();
+                jLabelPion_7_4.setVisible(true);
+                break;
 
-                case 9 :
-                    rendreAllInvisible4();
-                        jLabelPion_9_4.setVisible(true);
-                    break;
+            case 8:
+                rendreAllInvisible4();
+                jLabelPion_8_4.setVisible(true);
+                break;
 
-                case 10 :
-                    rendreAllInvisible4();
-                        jLabelPion_10_4.setVisible(true);
-                    break;
+            case 9:
+                rendreAllInvisible4();
+                jLabelPion_9_4.setVisible(true);
+                break;
 
-                case 11 :
-                    rendreAllInvisible4();
-                        jLabelPion_11_4.setVisible(true);
-                    break;
+            case 10:
+                rendreAllInvisible4();
+                jLabelPion_10_4.setVisible(true);
+                break;
 
-                case 12 :
-                    rendreAllInvisible4();
-                        jLabelPion_12_4.setVisible(true);
-                    break;
+            case 11:
+                rendreAllInvisible4();
+                jLabelPion_11_4.setVisible(true);
+                break;
 
-                case 13 :
-                    rendreAllInvisible4();
-                        jLabelPion_13_4.setVisible(true);
-                    break;
+            case 12:
+                rendreAllInvisible4();
+                jLabelPion_12_4.setVisible(true);
+                break;
 
-                case 14 :
-                    rendreAllInvisible4();
-                        jLabelPion_14_4.setVisible(true);
-                    break;
+            case 13:
+                rendreAllInvisible4();
+                jLabelPion_13_4.setVisible(true);
+                break;
 
-                case 15 :
-                    rendreAllInvisible4();
-                        jLabelPion_15_4.setVisible(true);
-                    break;
+            case 14:
+                rendreAllInvisible4();
+                jLabelPion_14_4.setVisible(true);
+                break;
 
-                case 16 :
-                    rendreAllInvisible4();
-                        jLabelPion_16_4.setVisible(true);
-                    break;
+            case 15:
+                rendreAllInvisible4();
+                jLabelPion_15_4.setVisible(true);
+                break;
 
-                case 17 :
-                    rendreAllInvisible4();
-                        jLabelPion_17_4.setVisible(true);
-                    break;
+            case 16:
+                rendreAllInvisible4();
+                jLabelPion_16_4.setVisible(true);
+                break;
 
-                case 18 :
-                    rendreAllInvisible4();
-                        jLabelPion_18_4.setVisible(true);
-                    break;
+            case 17:
+                rendreAllInvisible4();
+                jLabelPion_17_4.setVisible(true);
+                break;
 
-                case 19 :
-                    rendreAllInvisible4();
-                        jLabelPion_19_4.setVisible(true);
-                    break;
+            case 18:
+                rendreAllInvisible4();
+                jLabelPion_18_4.setVisible(true);
+                break;
 
-                case 20 :
-                    rendreAllInvisible4();
-                        jLabelPion_20_4.setVisible(true);
-                    break;
+            case 19:
+                rendreAllInvisible4();
+                jLabelPion_19_4.setVisible(true);
+                break;
 
-                case 21 :
-                    rendreAllInvisible4();
-                        jLabelPion_21_4.setVisible(true);
-                    break;
+            case 20:
+                rendreAllInvisible4();
+                jLabelPion_20_4.setVisible(true);
+                break;
 
-                case 22 :
-                    rendreAllInvisible4();
-                        jLabelPion_22_4.setVisible(true);
-                    break;
+            case 21:
+                rendreAllInvisible4();
+                jLabelPion_21_4.setVisible(true);
+                break;
 
-                case 23 :
-                    rendreAllInvisible4();
-                        jLabelPion_23_4.setVisible(true);
-                    break;
+            case 22:
+                rendreAllInvisible4();
+                jLabelPion_22_4.setVisible(true);
+                break;
 
-                case 24 :
-                    rendreAllInvisible4();
-                        jLabelPion_24_4.setVisible(true);
-                    break;
+            case 23:
+                rendreAllInvisible4();
+                jLabelPion_23_4.setVisible(true);
+                break;
 
-                case 25 :
-                    rendreAllInvisible4();
-                        jLabelPion_25_4.setVisible(true);
-                    break;
+            case 24:
+                rendreAllInvisible4();
+                jLabelPion_24_4.setVisible(true);
+                break;
 
-                case 26 :
-                    rendreAllInvisible4();
-                        jLabelPion_26_4.setVisible(true);
-                    break;
+            case 25:
+                rendreAllInvisible4();
+                jLabelPion_25_4.setVisible(true);
+                break;
 
-                case 27 :
-                    rendreAllInvisible4();
-                        jLabelPion_27_4.setVisible(true);
-                    break;
+            case 26:
+                rendreAllInvisible4();
+                jLabelPion_26_4.setVisible(true);
+                break;
 
-                case 28 :
-                    rendreAllInvisible4();
-                        jLabelPion_28_4.setVisible(true);
-                    break;
+            case 27:
+                rendreAllInvisible4();
+                jLabelPion_27_4.setVisible(true);
+                break;
 
-                case 29 :
-                    rendreAllInvisible4();
-                        jLabelPion_29_4.setVisible(true);
-                    break;
+            case 28:
+                rendreAllInvisible4();
+                jLabelPion_28_4.setVisible(true);
+                break;
 
-                case 30 :
-                    rendreAllInvisible4();
-                        jLabelPion_30_4.setVisible(true);
-                    break;
+            case 29:
+                rendreAllInvisible4();
+                jLabelPion_29_4.setVisible(true);
+                break;
 
-                case 31 :
-                    rendreAllInvisible4();
-                        jLabelPion_31_4.setVisible(true);
-                    break;
+            case 30:
+                rendreAllInvisible4();
+                jLabelPion_30_4.setVisible(true);
+                break;
 
-                case 32 :
-                    rendreAllInvisible4();
-                        jLabelPion_32_4.setVisible(true);
-                    break;
+            case 31:
+                rendreAllInvisible4();
+                jLabelPion_31_4.setVisible(true);
+                break;
 
-                case 33 :
-                    rendreAllInvisible4();
-                        jLabelPion_33_4.setVisible(true);
-                    break;
+            case 32:
+                rendreAllInvisible4();
+                jLabelPion_32_4.setVisible(true);
+                break;
 
-                case 34 :
-                    rendreAllInvisible4();
-                        jLabelPion_34_4.setVisible(true);
-                    break;
+            case 33:
+                rendreAllInvisible4();
+                jLabelPion_33_4.setVisible(true);
+                break;
 
-                case 35 :
-                    rendreAllInvisible4();
-                        jLabelPion_35_4.setVisible(true);
-                    break;
+            case 34:
+                rendreAllInvisible4();
+                jLabelPion_34_4.setVisible(true);
+                break;
 
-                case 36 :
-                    rendreAllInvisible4();
-                        jLabelPion_36_4.setVisible(true);
-                    break;
+            case 35:
+                rendreAllInvisible4();
+                jLabelPion_35_4.setVisible(true);
+                break;
 
-                case 37 :
-                    rendreAllInvisible4();
-                        jLabelPion_37_4.setVisible(true);
-                    break;
+            case 36:
+                rendreAllInvisible4();
+                jLabelPion_36_4.setVisible(true);
+                break;
 
-                case 38 :
-                    rendreAllInvisible4();
-                        jLabelPion_38_4.setVisible(true);
-                    break;
+            case 37:
+                rendreAllInvisible4();
+                jLabelPion_37_4.setVisible(true);
+                break;
 
-                case 39 :
-                    rendreAllInvisible4();
-                        jLabelPion_39_4.setVisible(true);
-                    break;
+            case 38:
+                rendreAllInvisible4();
+                jLabelPion_38_4.setVisible(true);
+                break;
 
-                case 40 :
-                    rendreAllInvisible4();
-                        jLabelPion_40_4.setVisible(true);
-                    break;
+            case 39:
+                rendreAllInvisible4();
+                jLabelPion_39_4.setVisible(true);
+                break;
+
+            case 40:
+                rendreAllInvisible4();
+                jLabelPion_40_4.setVisible(true);
+                break;
 
         }
-}
+    }
 
-    public static void rendreAllInvisible1(){
+    public static void rendreAllInvisible1() {
         jLabelPion_1_1.setVisible(false);
         jLabelPion_10_1.setVisible(false);
         jLabelPion_11_1.setVisible(false);
@@ -1497,8 +1484,8 @@ public class Partie_Monopoly extends javax.swing.JFrame {
         jLabelPion_9_1.setVisible(false);
     }
 
-    public static void rendreAllInvisible2(){
-        
+    public static void rendreAllInvisible2() {
+
         jLabelPion_1_2.setVisible(false);
         jLabelPion_10_2.setVisible(false);
         jLabelPion_11_2.setVisible(false);
@@ -1539,11 +1526,11 @@ public class Partie_Monopoly extends javax.swing.JFrame {
         jLabelPion_7_2.setVisible(false);
         jLabelPion_8_2.setVisible(false);
         jLabelPion_9_2.setVisible(false);
-    
+
     }
 
-    public static void rendreAllInvisible3(){
-    
+    public static void rendreAllInvisible3() {
+
         jLabelPion_1_3.setVisible(false);
         jLabelPion_10_3.setVisible(false);
         jLabelPion_11_3.setVisible(false);
@@ -1584,11 +1571,11 @@ public class Partie_Monopoly extends javax.swing.JFrame {
         jLabelPion_7_3.setVisible(false);
         jLabelPion_8_3.setVisible(false);
         jLabelPion_9_3.setVisible(false);
-        
+
     }
 
-    public static void rendreAllInvisible4(){
-    
+    public static void rendreAllInvisible4() {
+
         jLabelPion_1_4.setVisible(false);
         jLabelPion_10_4.setVisible(false);
         jLabelPion_11_4.setVisible(false);
@@ -1632,8 +1619,8 @@ public class Partie_Monopoly extends javax.swing.JFrame {
 
     }
 
-public void rendreAllInvisible(){
-        
+    public void rendreAllInvisible() {
+
         jLabelPion_1_1.setVisible(false);
         jLabelPion_1_2.setVisible(false);
         jLabelPion_1_3.setVisible(false);
@@ -3210,27 +3197,27 @@ public void rendreAllInvisible(){
         this.setLocationRelativeTo(null);
         this.setTitle("Monopoly-Partie");
 
-        RoleCourant=0;
+        RoleCourant = 0;
         joueur_courant.setText(choix_joueurs.joueurs.get(RoleCourant).getNom());
 
         this.rendreAllInvisible();
         this.rendreProprietairesInvisible();
-        
-        if((choix_joueurs.joueurs).size()==2){
+
+        if ((choix_joueurs.joueurs).size() == 2) {
             plateau_1.setVisible(true);
             plateau_2.setVisible(false);
             plateau_3.setVisible(false);
-            
+
             nom_joueur1.setText(choix_joueurs.joueurs.get(0).getNom());
-            solde_joueur_1.setText(""+choix_joueurs.joueurs.get(0).getSolde());
+            solde_joueur_1.setText("" + choix_joueurs.joueurs.get(0).getSolde());
             nom_joueur1.setVisible(true);
             solde_joueur_1.setVisible(true);
 
             nom_joueur2.setText(choix_joueurs.joueurs.get(1).getNom());
-            solde_joueur_2.setText(""+choix_joueurs.joueurs.get(1).getSolde());
+            solde_joueur_2.setText("" + choix_joueurs.joueurs.get(1).getSolde());
             nom_joueur2.setVisible(true);
             solde_joueur_2.setVisible(true);
-            
+
             jLabelPion_1_1.setVisible(true);
             jLabelPion_1_2.setVisible(true);
             jLabelPion_1_3.setVisible(false);
@@ -3238,23 +3225,23 @@ public void rendreAllInvisible(){
 
         }
 
-        if((choix_joueurs.joueurs).size()==3){
+        if ((choix_joueurs.joueurs).size() == 3) {
             plateau_1.setVisible(false);
             plateau_2.setVisible(true);
             plateau_3.setVisible(false);
 
             nom_joueur1.setText(choix_joueurs.joueurs.get(0).getNom());
-            solde_joueur_1.setText(""+choix_joueurs.joueurs.get(0).getSolde());
+            solde_joueur_1.setText("" + choix_joueurs.joueurs.get(0).getSolde());
             nom_joueur1.setVisible(true);
             solde_joueur_1.setVisible(true);
 
             nom_joueur2.setText(choix_joueurs.joueurs.get(1).getNom());
-            solde_joueur_2.setText(""+choix_joueurs.joueurs.get(1).getSolde());
+            solde_joueur_2.setText("" + choix_joueurs.joueurs.get(1).getSolde());
             nom_joueur2.setVisible(true);
             solde_joueur_2.setVisible(true);
 
             nom_joueur3.setText(choix_joueurs.joueurs.get(2).getNom());
-            solde_joueur_3.setText(""+choix_joueurs.joueurs.get(2).getSolde());
+            solde_joueur_3.setText("" + choix_joueurs.joueurs.get(2).getSolde());
             nom_joueur3.setVisible(true);
             solde_joueur_3.setVisible(true);
 
@@ -3265,80 +3252,105 @@ public void rendreAllInvisible(){
 
         }
 
-        if((choix_joueurs.joueurs).size()==4){
+        if ((choix_joueurs.joueurs).size() == 4) {
             plateau_1.setVisible(false);
             plateau_2.setVisible(false);
             plateau_3.setVisible(true);
-            
+
             nom_joueur1.setText(choix_joueurs.joueurs.get(0).getNom());
-            solde_joueur_1.setText(""+choix_joueurs.joueurs.get(0).getSolde());
+            solde_joueur_1.setText("" + choix_joueurs.joueurs.get(0).getSolde());
             nom_joueur1.setVisible(true);
             solde_joueur_1.setVisible(true);
 
             nom_joueur2.setText(choix_joueurs.joueurs.get(1).getNom());
-            solde_joueur_2.setText(""+choix_joueurs.joueurs.get(1).getSolde());
+            solde_joueur_2.setText("" + choix_joueurs.joueurs.get(1).getSolde());
             nom_joueur2.setVisible(true);
             solde_joueur_2.setVisible(true);
 
             nom_joueur3.setText(choix_joueurs.joueurs.get(2).getNom());
-            solde_joueur_3.setText(""+choix_joueurs.joueurs.get(2).getSolde());
+            solde_joueur_3.setText("" + choix_joueurs.joueurs.get(2).getSolde());
             nom_joueur3.setVisible(true);
             solde_joueur_3.setVisible(true);
 
             nom_joueur4.setText(choix_joueurs.joueurs.get(3).getNom());
-            solde_joueur_4.setText(""+choix_joueurs.joueurs.get(3).getSolde());
+            solde_joueur_4.setText("" + choix_joueurs.joueurs.get(3).getSolde());
             nom_joueur4.setVisible(true);
             solde_joueur_4.setVisible(true);
-            
+
             jLabelPion_1_1.setVisible(true);
             jLabelPion_1_2.setVisible(true);
             jLabelPion_1_3.setVisible(true);
             jLabelPion_1_4.setVisible(true);
         }
 
-        for(int i=0;i<choix_joueurs.joueurs.size();i++){
+        for (int i = 0; i < choix_joueurs.joueurs.size(); i++) {
             choix_joueurs.joueurs.get(i).setPos(1);
         }
 
-        
 
     }//GEN-LAST:event_formWindowOpened
+    public void updateDice(final int a, final int b) {
 
+        try {
+
+            // Thread used for animation of dice
+            new Thread() {
+                public void run() {
+                    int lower = 1;
+                    int higher = 7;
+                    int nombreGere1 = 0;
+                    int nombreGere2 = 0;
+
+                    for (int i = 0; i < 20; i++) {
+
+                        nombreGere1 = (int) (Math.random() * (higher - lower)) + lower;
+                        nombreGere2 = (int) (Math.random() * (higher - lower)) + lower;
+                        jLabelDe1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/de_" + nombreGere1 + ".png")));
+                        jLabelDe2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/de_" + nombreGere2 + ".png")));
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    jLabelDe1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/de_" + a + ".png")));
+                    jLabelDe2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/de_" + b + ".png")));
+                    int sommeDes = a + b;
+
+        val_somme_de = sommeDes;
+
+        choix_joueurs.joueurs.get(RoleCourant).setPos(getNouvellePosition(choix_joueurs.joueurs.get(RoleCourant).getPos(), sommeDes));
+        Sedeplacer(choix_joueurs.joueurs.get(RoleCourant), choix_joueurs.joueurs.get(RoleCourant).getPos());
+
+        if (nombreGere1 != nombreGere2) {
+            getRoleJoueurSuivant();
+        }
+
+                }
+
+            }.start();
+            } 
+		catch (ClassCastException e) {
+			System.err.println("Des expected object to method updateDice");
+		}
+        }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int lower = 1;
         int higher = 7;
-        int nombreGere1=0;
-        int nombreGere2=0;
-
-
-        for(int i=0;i<10;i++){
-            nombreGere1 = (int)(Math.random() * (higher-lower)) + lower;
-            nombreGere2 = (int)(Math.random() * (higher-lower)) + lower;
-                jLabelDe1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/de_"+nombreGere1+".png")));
-                jLabelDe2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/de_"+nombreGere2+".png")));
-        }
-
-        int sommeDes=nombreGere1+nombreGere2;
-
-        val_somme_de=sommeDes;
-
-        choix_joueurs.joueurs.get(RoleCourant).setPos(getNouvellePosition(choix_joueurs.joueurs.get(RoleCourant).getPos(),sommeDes));
-        Sedeplacer(choix_joueurs.joueurs.get(RoleCourant),choix_joueurs.joueurs.get(RoleCourant).getPos());
-
-  
+        int nombreGere1;
+        int nombreGere2;
+        nombreGere1 = (int) (Math.random() * (higher - lower)) + lower;
+        nombreGere2 = (int) (Math.random() * (higher - lower)) + lower;
+        updateDice(nombreGere1,nombreGere2);
+        
         
 
-
-        if(nombreGere1!=nombreGere2){
-              getRoleJoueurSuivant();
-         }
-        
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -3580,5 +3592,4 @@ public void rendreAllInvisible(){
     public static javax.swing.JLabel solde_joueur_3;
     public static javax.swing.JLabel solde_joueur_4;
     // End of variables declaration//GEN-END:variables
-
 }
