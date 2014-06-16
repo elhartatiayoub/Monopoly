@@ -3,11 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
- * Partie_Monopoly.java
- *
- * Created on 3 juin 2011, 23:32:10
- */
+
 package monopoly.app;
 
 /**

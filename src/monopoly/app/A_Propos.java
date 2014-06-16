@@ -3,11 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
- * A_Propos.java
- *
- * Created on 3 juin 2011, 16:26:52
- */
+
 
 package monopoly.app;
 import monopoly.app.ChoixUtilisateurs;

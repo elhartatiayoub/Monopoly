@@ -3,11 +3,6 @@
  * and open the template in the editor.
  */
 
-/*
- * ChoixUtilisateurs.java
- *
- * Created on 28 mai 2011, 14:26:06
- */
 
 package monopoly.app;
 

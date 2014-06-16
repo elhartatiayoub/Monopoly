@@ -3,11 +3,6 @@
  * and open the template in the editor.
  */
 
-/*
- * Regles_Jeu.java
- *
- * Created on 3 juin 2011, 16:47:34
- */
 
 package monopoly.app;
 

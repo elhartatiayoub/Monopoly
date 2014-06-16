@@ -3,11 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
- * Accueil.java
- *
- * Created on 28 mai 2011, 11:58:44
- */
+
 
 package monopoly.app;
 

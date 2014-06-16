@@ -3,16 +3,10 @@
  * and open the template in the editor.
  */
 
-/*
- * AfficherCase.java
- *
- * Created on 12 juin 2011, 12:26:42
- */
 
 package monopoly.app;
 
 import java.util.ArrayList;
-import javax.swing.text.Position;
 
 /**
  *

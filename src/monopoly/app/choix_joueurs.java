@@ -3,11 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
- * choix_joueurs.java
- *
- * Created on 14/06/2014, 16:57:45
- */
+
 package monopoly.app;
 
 import java.awt.Color;
