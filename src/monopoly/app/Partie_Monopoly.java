@@ -168,16 +168,6 @@ public class Partie_Monopoly extends javax.swing.JFrame {
                 propr9.setVisible(true);
                 break;
 
-            /*                case 10 :
-                        
-             if(id==0){
-             propr10.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion1.png"));
-             }
-             if(id==1){
-             propr10.setIcon(new javax.swing.ImageIcon("/monopoly/images/pion2.png"));
-             }
-             propr10 .setVisible(true);
-             break;*/
             case 11:
 
                 if (id == 0) {
