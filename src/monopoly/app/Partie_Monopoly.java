@@ -2,9 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 package monopoly.app;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JLabel;
 
 /**
  *
@@ -16,11 +18,66 @@ public class Partie_Monopoly extends javax.swing.JFrame {
 
     public static int val_somme_de;
 
+    public static ArrayList<JLabel> miniCartes = new ArrayList<JLabel>();
+
     /**
      * Creates new form Partie_Monopoly
      */
     public Partie_Monopoly() {
         initComponents();
+        miniCartes.add(jLabel29);
+        miniCartes.add(jLabel3);
+        miniCartes.add(jLabel29);
+        miniCartes.add(jLabel5);
+        miniCartes.add(jLabel29);
+        miniCartes.add(jLabel28);
+        miniCartes.add(jLabel6);
+        miniCartes.add(jLabel29);
+        miniCartes.add(jLabel7);
+        miniCartes.add(jLabel8);
+        miniCartes.add(jLabel29);
+        miniCartes.add(jLabel9);
+        miniCartes.add(jLabel26);
+        miniCartes.add(jLabel10);
+        miniCartes.add(jLabel11);
+        miniCartes.add(jLabel30);
+        miniCartes.add(jLabel12);
+        miniCartes.add(jLabel29);
+        miniCartes.add(jLabel13);
+        miniCartes.add(jLabel14);
+        miniCartes.add(jLabel29);
+        miniCartes.add(jLabel15);
+        miniCartes.add(jLabel29);
+        miniCartes.add(jLabel16);
+        miniCartes.add(jLabel17);
+        miniCartes.add(jLabel31);
+        miniCartes.add(jLabel18);
+        miniCartes.add(jLabel19);
+        miniCartes.add(jLabel27);
+        miniCartes.add(jLabel20);
+        miniCartes.add(jLabel29);
+        miniCartes.add(jLabel21);
+        miniCartes.add(jLabel22);
+        miniCartes.add(jLabel29);
+        miniCartes.add(jLabel23);
+        miniCartes.add(jLabel32);
+        miniCartes.add(jLabel24);
+        miniCartes.add(jLabel29);
+        miniCartes.add(jLabel25);
+        for (Joueur j : choix_joueurs.joueurs) {
+            j.addObserver(new MiniCarteObserver(miniCartes));
+        }
+    }
+
+    public static void updateMiniCartes(List<Case> list) {
+        for (JLabel j : miniCartes) {
+            j.setVisible(false);
+        }
+        for (Case c : list) {
+            System.out.println( c.getNomCase() );
+            miniCartes.get(c.getNumCase() - 1).setVisible(true);
+            
+        }
     }
 
     public int getNouvellePosition(int anc_pos, int sommeValDes) {
@@ -558,9 +615,12 @@ public class Partie_Monopoly extends javax.swing.JFrame {
         if (id > choix_joueurs.joueurs.size() - 1) {
             RoleCourant = 0;
             joueur_courant.setText(choix_joueurs.joueurs.get(RoleCourant).getNom());
+            updateMiniCartes(choix_joueurs.joueurs.get(RoleCourant).getProprietes());
         } else {
             RoleCourant++;
             joueur_courant.setText(choix_joueurs.joueurs.get(RoleCourant).getNom());
+            updateMiniCartes(choix_joueurs.joueurs.get(RoleCourant).getProprietes());
+
         }
     }
     //fin préciser le role
@@ -595,1002 +655,1003 @@ public class Partie_Monopoly extends javax.swing.JFrame {
 
     }
 
-    public static void DeplacerJoueur( int i) {
-        
-        if(choix_joueurs.joueurs.get(i-1).getIcone()==1){
-        switch (choix_joueurs.joueurs.get(i-1).getPos()) {
+    public static void DeplacerJoueur(int i) {
 
-            case 1:
-                rendreAllInvisible(1);
-                jLabelPion_1_1.setVisible(true);
-                break;
+        if (choix_joueurs.joueurs.get(i - 1).getIcone() == 1) {
+            switch (choix_joueurs.joueurs.get(i - 1).getPos()) {
 
-            case 2:
-                rendreAllInvisible(1);
-                jLabelPion_2_1.setVisible(true);
-                break;
+                case 1:
+                    rendreAllInvisible(1);
+                    jLabelPion_1_1.setVisible(true);
+                    break;
 
-            case 3:
-                rendreAllInvisible(1);
-                jLabelPion_3_1.setVisible(true);
-                break;
+                case 2:
+                    rendreAllInvisible(1);
+                    jLabelPion_2_1.setVisible(true);
+                    break;
 
-            case 4:
-                rendreAllInvisible(1);
-                jLabelPion_4_1.setVisible(true);
-                break;
+                case 3:
+                    rendreAllInvisible(1);
+                    jLabelPion_3_1.setVisible(true);
+                    break;
 
-            case 5:
-                rendreAllInvisible(1);
-                jLabelPion_5_1.setVisible(true);
-                break;
+                case 4:
+                    rendreAllInvisible(1);
+                    jLabelPion_4_1.setVisible(true);
+                    break;
 
-            case 6:
-                rendreAllInvisible(1);
-                jLabelPion_6_1.setVisible(true);
-                break;
+                case 5:
+                    rendreAllInvisible(1);
+                    jLabelPion_5_1.setVisible(true);
+                    break;
 
-            case 7:
-                rendreAllInvisible(1);
-                jLabelPion_7_1.setVisible(true);
-                break;
+                case 6:
+                    rendreAllInvisible(1);
+                    jLabelPion_6_1.setVisible(true);
+                    break;
 
-            case 8:
-                rendreAllInvisible(1);
-                jLabelPion_8_1.setVisible(true);
-                break;
+                case 7:
+                    rendreAllInvisible(1);
+                    jLabelPion_7_1.setVisible(true);
+                    break;
 
-            case 9:
-                rendreAllInvisible(1);
-                jLabelPion_9_1.setVisible(true);
-                break;
+                case 8:
+                    rendreAllInvisible(1);
+                    jLabelPion_8_1.setVisible(true);
+                    break;
 
-            case 10:
-                rendreAllInvisible(1);
-                jLabelPion_10_1.setVisible(true);
-                break;
+                case 9:
+                    rendreAllInvisible(1);
+                    jLabelPion_9_1.setVisible(true);
+                    break;
 
-            case 11:
-                rendreAllInvisible(1);
-                jLabelPion_11_1.setVisible(true);
-                break;
+                case 10:
+                    rendreAllInvisible(1);
+                    jLabelPion_10_1.setVisible(true);
+                    break;
 
-            case 12:
-                rendreAllInvisible(1);
-                jLabelPion_12_1.setVisible(true);
-                break;
+                case 11:
+                    rendreAllInvisible(1);
+                    jLabelPion_11_1.setVisible(true);
+                    break;
 
-            case 13:
-                rendreAllInvisible(1);
-                jLabelPion_13_1.setVisible(true);
-                break;
+                case 12:
+                    rendreAllInvisible(1);
+                    jLabelPion_12_1.setVisible(true);
+                    break;
 
-            case 14:
-                rendreAllInvisible(1);
-                jLabelPion_14_1.setVisible(true);
-                break;
+                case 13:
+                    rendreAllInvisible(1);
+                    jLabelPion_13_1.setVisible(true);
+                    break;
 
-            case 15:
-                rendreAllInvisible(1);
-                jLabelPion_15_1.setVisible(true);
-                break;
+                case 14:
+                    rendreAllInvisible(1);
+                    jLabelPion_14_1.setVisible(true);
+                    break;
 
-            case 16:
-                rendreAllInvisible(1);
-                jLabelPion_16_1.setVisible(true);
-                break;
+                case 15:
+                    rendreAllInvisible(1);
+                    jLabelPion_15_1.setVisible(true);
+                    break;
 
-            case 17:
-                rendreAllInvisible(1);
-                jLabelPion_17_1.setVisible(true);
-                break;
+                case 16:
+                    rendreAllInvisible(1);
+                    jLabelPion_16_1.setVisible(true);
+                    break;
 
-            case 18:
-                rendreAllInvisible(1);
-                jLabelPion_18_1.setVisible(true);
-                break;
+                case 17:
+                    rendreAllInvisible(1);
+                    jLabelPion_17_1.setVisible(true);
+                    break;
 
-            case 19:
-                rendreAllInvisible(1);
-                jLabelPion_19_1.setVisible(true);
-                break;
+                case 18:
+                    rendreAllInvisible(1);
+                    jLabelPion_18_1.setVisible(true);
+                    break;
 
-            case 20:
-                rendreAllInvisible(1);
-                jLabelPion_20_1.setVisible(true);
-                break;
+                case 19:
+                    rendreAllInvisible(1);
+                    jLabelPion_19_1.setVisible(true);
+                    break;
 
-            case 21:
-                rendreAllInvisible(1);
-                jLabelPion_21_1.setVisible(true);
-                break;
+                case 20:
+                    rendreAllInvisible(1);
+                    jLabelPion_20_1.setVisible(true);
+                    break;
 
-            case 22:
-                rendreAllInvisible(1);
-                jLabelPion_22_1.setVisible(true);
-                break;
+                case 21:
+                    rendreAllInvisible(1);
+                    jLabelPion_21_1.setVisible(true);
+                    break;
 
-            case 23:
-                rendreAllInvisible(1);
-                jLabelPion_23_1.setVisible(true);
-                break;
+                case 22:
+                    rendreAllInvisible(1);
+                    jLabelPion_22_1.setVisible(true);
+                    break;
 
-            case 24:
-                rendreAllInvisible(1);
-                jLabelPion_24_1.setVisible(true);
-                break;
+                case 23:
+                    rendreAllInvisible(1);
+                    jLabelPion_23_1.setVisible(true);
+                    break;
 
-            case 25:
-                rendreAllInvisible(1);
-                jLabelPion_25_1.setVisible(true);
-                break;
+                case 24:
+                    rendreAllInvisible(1);
+                    jLabelPion_24_1.setVisible(true);
+                    break;
 
-            case 26:
-                rendreAllInvisible(1);
-                jLabelPion_26_1.setVisible(true);
-                break;
+                case 25:
+                    rendreAllInvisible(1);
+                    jLabelPion_25_1.setVisible(true);
+                    break;
 
-            case 27:
-                rendreAllInvisible(1);
-                jLabelPion_27_1.setVisible(true);
-                break;
+                case 26:
+                    rendreAllInvisible(1);
+                    jLabelPion_26_1.setVisible(true);
+                    break;
 
-            case 28:
-                rendreAllInvisible(1);
-                jLabelPion_28_1.setVisible(true);
-                break;
+                case 27:
+                    rendreAllInvisible(1);
+                    jLabelPion_27_1.setVisible(true);
+                    break;
 
-            case 29:
-                rendreAllInvisible(1);
-                jLabelPion_29_1.setVisible(true);
-                break;
+                case 28:
+                    rendreAllInvisible(1);
+                    jLabelPion_28_1.setVisible(true);
+                    break;
 
-            case 30:
-                rendreAllInvisible(1);
-                jLabelPion_30_1.setVisible(true);
-                break;
+                case 29:
+                    rendreAllInvisible(1);
+                    jLabelPion_29_1.setVisible(true);
+                    break;
 
-            case 31:
-                rendreAllInvisible(1);
-                jLabelPion_31_1.setVisible(true);
-                break;
+                case 30:
+                    rendreAllInvisible(1);
+                    jLabelPion_30_1.setVisible(true);
+                    break;
 
-            case 32:
-                rendreAllInvisible(1);
-                jLabelPion_32_1.setVisible(true);
-                break;
+                case 31:
+                    rendreAllInvisible(1);
+                    jLabelPion_31_1.setVisible(true);
+                    break;
 
-            case 33:
-                rendreAllInvisible(1);
-                jLabelPion_33_1.setVisible(true);
-                break;
+                case 32:
+                    rendreAllInvisible(1);
+                    jLabelPion_32_1.setVisible(true);
+                    break;
 
-            case 34:
-                rendreAllInvisible(1);
-                jLabelPion_34_1.setVisible(true);
-                break;
+                case 33:
+                    rendreAllInvisible(1);
+                    jLabelPion_33_1.setVisible(true);
+                    break;
 
-            case 35:
-                rendreAllInvisible(1);
-                jLabelPion_35_1.setVisible(true);
-                break;
+                case 34:
+                    rendreAllInvisible(1);
+                    jLabelPion_34_1.setVisible(true);
+                    break;
 
-            case 36:
-                rendreAllInvisible(1);
-                jLabelPion_36_1.setVisible(true);
-                break;
+                case 35:
+                    rendreAllInvisible(1);
+                    jLabelPion_35_1.setVisible(true);
+                    break;
 
-            case 37:
-                rendreAllInvisible(1);
-                jLabelPion_37_1.setVisible(true);
-                break;
+                case 36:
+                    rendreAllInvisible(1);
+                    jLabelPion_36_1.setVisible(true);
+                    break;
 
-            case 38:
-                rendreAllInvisible(1);
-                jLabelPion_38_1.setVisible(true);
-                break;
+                case 37:
+                    rendreAllInvisible(1);
+                    jLabelPion_37_1.setVisible(true);
+                    break;
 
-            case 39:
-                rendreAllInvisible(1);
-                jLabelPion_39_1.setVisible(true);
-                break;
+                case 38:
+                    rendreAllInvisible(1);
+                    jLabelPion_38_1.setVisible(true);
+                    break;
 
-            case 40:
-                rendreAllInvisible(1);
-                jLabelPion_40_1.setVisible(true);
-                break;
+                case 39:
+                    rendreAllInvisible(1);
+                    jLabelPion_39_1.setVisible(true);
+                    break;
 
+                case 40:
+                    rendreAllInvisible(1);
+                    jLabelPion_40_1.setVisible(true);
+                    break;
+
+            }
         }
-    }if(choix_joueurs.joueurs.get(i-1).getIcone()==2){
-        switch (choix_joueurs.joueurs.get(i-1).getPos()) {
+        if (choix_joueurs.joueurs.get(i - 1).getIcone() == 2) {
+            switch (choix_joueurs.joueurs.get(i - 1).getPos()) {
 
-            case 1:
-                rendreAllInvisible(2);
-                jLabelPion_1_2.setVisible(true);
-                break;
+                case 1:
+                    rendreAllInvisible(2);
+                    jLabelPion_1_2.setVisible(true);
+                    break;
 
-            case 2:
-                rendreAllInvisible(2);
-                jLabelPion_2_2.setVisible(true);
-                break;
+                case 2:
+                    rendreAllInvisible(2);
+                    jLabelPion_2_2.setVisible(true);
+                    break;
 
-            case 3:
-                rendreAllInvisible(2);
-                jLabelPion_3_2.setVisible(true);
-                break;
+                case 3:
+                    rendreAllInvisible(2);
+                    jLabelPion_3_2.setVisible(true);
+                    break;
 
-            case 4:
-                rendreAllInvisible(2);
-                jLabelPion_4_2.setVisible(true);
-                break;
+                case 4:
+                    rendreAllInvisible(2);
+                    jLabelPion_4_2.setVisible(true);
+                    break;
 
-            case 5:
-                rendreAllInvisible(2);
-                jLabelPion_5_2.setVisible(true);
-                break;
+                case 5:
+                    rendreAllInvisible(2);
+                    jLabelPion_5_2.setVisible(true);
+                    break;
 
-            case 6:
-                rendreAllInvisible(2);
-                jLabelPion_6_2.setVisible(true);
-                break;
+                case 6:
+                    rendreAllInvisible(2);
+                    jLabelPion_6_2.setVisible(true);
+                    break;
 
-            case 7:
-                rendreAllInvisible(2);
-                jLabelPion_7_2.setVisible(true);
-                break;
+                case 7:
+                    rendreAllInvisible(2);
+                    jLabelPion_7_2.setVisible(true);
+                    break;
 
-            case 8:
-                rendreAllInvisible(2);
-                jLabelPion_8_2.setVisible(true);
-                break;
+                case 8:
+                    rendreAllInvisible(2);
+                    jLabelPion_8_2.setVisible(true);
+                    break;
 
-            case 9:
-                rendreAllInvisible(2);
-                jLabelPion_9_2.setVisible(true);
-                break;
+                case 9:
+                    rendreAllInvisible(2);
+                    jLabelPion_9_2.setVisible(true);
+                    break;
 
-            case 10:
-                rendreAllInvisible(2);
-                jLabelPion_10_2.setVisible(true);
-                break;
+                case 10:
+                    rendreAllInvisible(2);
+                    jLabelPion_10_2.setVisible(true);
+                    break;
 
-            case 11:
-                rendreAllInvisible(2);
-                jLabelPion_11_2.setVisible(true);
-                break;
+                case 11:
+                    rendreAllInvisible(2);
+                    jLabelPion_11_2.setVisible(true);
+                    break;
 
-            case 12:
-                rendreAllInvisible(2);
-                jLabelPion_12_2.setVisible(true);
-                break;
+                case 12:
+                    rendreAllInvisible(2);
+                    jLabelPion_12_2.setVisible(true);
+                    break;
 
-            case 13:
-                rendreAllInvisible(2);
-                jLabelPion_13_2.setVisible(true);
-                break;
+                case 13:
+                    rendreAllInvisible(2);
+                    jLabelPion_13_2.setVisible(true);
+                    break;
 
-            case 14:
-                rendreAllInvisible(2);
-                jLabelPion_14_2.setVisible(true);
-                break;
+                case 14:
+                    rendreAllInvisible(2);
+                    jLabelPion_14_2.setVisible(true);
+                    break;
 
-            case 15:
-                rendreAllInvisible(2);
-                jLabelPion_15_2.setVisible(true);
-                break;
+                case 15:
+                    rendreAllInvisible(2);
+                    jLabelPion_15_2.setVisible(true);
+                    break;
 
-            case 16:
-                rendreAllInvisible(2);
-                jLabelPion_16_2.setVisible(true);
-                break;
+                case 16:
+                    rendreAllInvisible(2);
+                    jLabelPion_16_2.setVisible(true);
+                    break;
 
-            case 17:
-                rendreAllInvisible(2);
-                jLabelPion_17_2.setVisible(true);
-                break;
+                case 17:
+                    rendreAllInvisible(2);
+                    jLabelPion_17_2.setVisible(true);
+                    break;
 
-            case 18:
-                rendreAllInvisible(2);
-                jLabelPion_18_2.setVisible(true);
-                break;
+                case 18:
+                    rendreAllInvisible(2);
+                    jLabelPion_18_2.setVisible(true);
+                    break;
 
-            case 19:
-                rendreAllInvisible(2);
-                jLabelPion_19_2.setVisible(true);
-                break;
+                case 19:
+                    rendreAllInvisible(2);
+                    jLabelPion_19_2.setVisible(true);
+                    break;
 
-            case 20:
-                rendreAllInvisible(2);
-                jLabelPion_20_2.setVisible(true);
-                break;
+                case 20:
+                    rendreAllInvisible(2);
+                    jLabelPion_20_2.setVisible(true);
+                    break;
 
-            case 21:
-                rendreAllInvisible(2);
-                jLabelPion_21_2.setVisible(true);
-                break;
+                case 21:
+                    rendreAllInvisible(2);
+                    jLabelPion_21_2.setVisible(true);
+                    break;
 
-            case 22:
-                rendreAllInvisible(2);
-                jLabelPion_22_2.setVisible(true);
-                break;
+                case 22:
+                    rendreAllInvisible(2);
+                    jLabelPion_22_2.setVisible(true);
+                    break;
 
-            case 23:
-                rendreAllInvisible(2);
-                jLabelPion_23_2.setVisible(true);
-                break;
+                case 23:
+                    rendreAllInvisible(2);
+                    jLabelPion_23_2.setVisible(true);
+                    break;
 
-            case 24:
-                rendreAllInvisible(2);
-                jLabelPion_24_2.setVisible(true);
-                break;
+                case 24:
+                    rendreAllInvisible(2);
+                    jLabelPion_24_2.setVisible(true);
+                    break;
 
-            case 25:
-                rendreAllInvisible(2);
-                jLabelPion_25_2.setVisible(true);
-                break;
+                case 25:
+                    rendreAllInvisible(2);
+                    jLabelPion_25_2.setVisible(true);
+                    break;
 
-            case 26:
-                rendreAllInvisible(2);
-                jLabelPion_26_2.setVisible(true);
-                break;
+                case 26:
+                    rendreAllInvisible(2);
+                    jLabelPion_26_2.setVisible(true);
+                    break;
 
-            case 27:
-                rendreAllInvisible(2);
-                jLabelPion_27_2.setVisible(true);
-                break;
+                case 27:
+                    rendreAllInvisible(2);
+                    jLabelPion_27_2.setVisible(true);
+                    break;
 
-            case 28:
-                rendreAllInvisible(2);
-                jLabelPion_28_2.setVisible(true);
-                break;
+                case 28:
+                    rendreAllInvisible(2);
+                    jLabelPion_28_2.setVisible(true);
+                    break;
 
-            case 29:
-                rendreAllInvisible(2);
-                jLabelPion_29_2.setVisible(true);
-                break;
+                case 29:
+                    rendreAllInvisible(2);
+                    jLabelPion_29_2.setVisible(true);
+                    break;
 
-            case 30:
-                rendreAllInvisible(2);
-                jLabelPion_30_2.setVisible(true);
-                break;
+                case 30:
+                    rendreAllInvisible(2);
+                    jLabelPion_30_2.setVisible(true);
+                    break;
 
-            case 31:
-                rendreAllInvisible(2);
-                jLabelPion_31_2.setVisible(true);
-                break;
+                case 31:
+                    rendreAllInvisible(2);
+                    jLabelPion_31_2.setVisible(true);
+                    break;
 
-            case 32:
-                rendreAllInvisible(2);
-                jLabelPion_32_2.setVisible(true);
-                break;
+                case 32:
+                    rendreAllInvisible(2);
+                    jLabelPion_32_2.setVisible(true);
+                    break;
 
-            case 33:
-                rendreAllInvisible(2);
-                jLabelPion_33_2.setVisible(true);
-                break;
+                case 33:
+                    rendreAllInvisible(2);
+                    jLabelPion_33_2.setVisible(true);
+                    break;
 
-            case 34:
-                rendreAllInvisible(2);
-                jLabelPion_34_2.setVisible(true);
-                break;
+                case 34:
+                    rendreAllInvisible(2);
+                    jLabelPion_34_2.setVisible(true);
+                    break;
 
-            case 35:
-                rendreAllInvisible(2);
-                jLabelPion_35_2.setVisible(true);
-                break;
+                case 35:
+                    rendreAllInvisible(2);
+                    jLabelPion_35_2.setVisible(true);
+                    break;
 
-            case 36:
-                rendreAllInvisible(2);
-                jLabelPion_36_2.setVisible(true);
-                break;
+                case 36:
+                    rendreAllInvisible(2);
+                    jLabelPion_36_2.setVisible(true);
+                    break;
 
-            case 37:
-                rendreAllInvisible(2);
-                jLabelPion_37_2.setVisible(true);
-                break;
+                case 37:
+                    rendreAllInvisible(2);
+                    jLabelPion_37_2.setVisible(true);
+                    break;
 
-            case 38:
-                rendreAllInvisible(2);
-                jLabelPion_38_2.setVisible(true);
-                break;
+                case 38:
+                    rendreAllInvisible(2);
+                    jLabelPion_38_2.setVisible(true);
+                    break;
 
-            case 39:
-                rendreAllInvisible(2);
-                jLabelPion_39_2.setVisible(true);
-                break;
+                case 39:
+                    rendreAllInvisible(2);
+                    jLabelPion_39_2.setVisible(true);
+                    break;
 
-            case 40:
-                rendreAllInvisible(2);
-                jLabelPion_40_2.setVisible(true);
-                break;
+                case 40:
+                    rendreAllInvisible(2);
+                    jLabelPion_40_2.setVisible(true);
+                    break;
 
+            }
         }
-    }if(choix_joueurs.joueurs.get(i-1).getIcone()==3){
+        if (choix_joueurs.joueurs.get(i - 1).getIcone() == 3) {
 
-        switch (choix_joueurs.joueurs.get(i-1).getPos()) {
+            switch (choix_joueurs.joueurs.get(i - 1).getPos()) {
 
-            case 1:
-                rendreAllInvisible(3);
-                jLabelPion_1_3.setVisible(true);
-                break;
+                case 1:
+                    rendreAllInvisible(3);
+                    jLabelPion_1_3.setVisible(true);
+                    break;
 
-            case 2:
-                rendreAllInvisible(3);
-                jLabelPion_2_3.setVisible(true);
-                break;
+                case 2:
+                    rendreAllInvisible(3);
+                    jLabelPion_2_3.setVisible(true);
+                    break;
 
-            case 3:
-                rendreAllInvisible(3);
-                jLabelPion_3_3.setVisible(true);
-                break;
+                case 3:
+                    rendreAllInvisible(3);
+                    jLabelPion_3_3.setVisible(true);
+                    break;
 
-            case 4:
-                rendreAllInvisible(3);
-                jLabelPion_4_3.setVisible(true);
-                break;
+                case 4:
+                    rendreAllInvisible(3);
+                    jLabelPion_4_3.setVisible(true);
+                    break;
 
-            case 5:
-                rendreAllInvisible(3);
-                jLabelPion_5_3.setVisible(true);
-                break;
+                case 5:
+                    rendreAllInvisible(3);
+                    jLabelPion_5_3.setVisible(true);
+                    break;
 
-            case 6:
-                rendreAllInvisible(3);
-                jLabelPion_6_3.setVisible(true);
-                break;
+                case 6:
+                    rendreAllInvisible(3);
+                    jLabelPion_6_3.setVisible(true);
+                    break;
 
-            case 7:
-                rendreAllInvisible(3);
-                jLabelPion_7_3.setVisible(true);
-                break;
+                case 7:
+                    rendreAllInvisible(3);
+                    jLabelPion_7_3.setVisible(true);
+                    break;
 
-            case 8:
-                rendreAllInvisible(3);
-                jLabelPion_8_3.setVisible(true);
-                break;
+                case 8:
+                    rendreAllInvisible(3);
+                    jLabelPion_8_3.setVisible(true);
+                    break;
 
-            case 9:
-                rendreAllInvisible(3);
-                jLabelPion_9_3.setVisible(true);
-                break;
+                case 9:
+                    rendreAllInvisible(3);
+                    jLabelPion_9_3.setVisible(true);
+                    break;
 
-            case 10:
-                rendreAllInvisible(3);
-                jLabelPion_10_3.setVisible(true);
-                break;
+                case 10:
+                    rendreAllInvisible(3);
+                    jLabelPion_10_3.setVisible(true);
+                    break;
 
-            case 11:
-                rendreAllInvisible(3);
-                jLabelPion_11_3.setVisible(true);
-                break;
+                case 11:
+                    rendreAllInvisible(3);
+                    jLabelPion_11_3.setVisible(true);
+                    break;
 
-            case 12:
-                rendreAllInvisible(3);
-                jLabelPion_12_3.setVisible(true);
-                break;
+                case 12:
+                    rendreAllInvisible(3);
+                    jLabelPion_12_3.setVisible(true);
+                    break;
 
-            case 13:
-                rendreAllInvisible(3);
-                jLabelPion_13_3.setVisible(true);
-                break;
+                case 13:
+                    rendreAllInvisible(3);
+                    jLabelPion_13_3.setVisible(true);
+                    break;
 
-            case 14:
-                rendreAllInvisible(3);
-                jLabelPion_14_3.setVisible(true);
-                break;
+                case 14:
+                    rendreAllInvisible(3);
+                    jLabelPion_14_3.setVisible(true);
+                    break;
 
-            case 15:
-                rendreAllInvisible(3);
-                jLabelPion_15_3.setVisible(true);
-                break;
+                case 15:
+                    rendreAllInvisible(3);
+                    jLabelPion_15_3.setVisible(true);
+                    break;
 
-            case 16:
-                rendreAllInvisible(3);
-                jLabelPion_16_3.setVisible(true);
-                break;
+                case 16:
+                    rendreAllInvisible(3);
+                    jLabelPion_16_3.setVisible(true);
+                    break;
 
-            case 17:
-                rendreAllInvisible(3);
-                jLabelPion_17_3.setVisible(true);
-                break;
+                case 17:
+                    rendreAllInvisible(3);
+                    jLabelPion_17_3.setVisible(true);
+                    break;
 
-            case 18:
-                rendreAllInvisible(3);
-                jLabelPion_18_3.setVisible(true);
-                break;
+                case 18:
+                    rendreAllInvisible(3);
+                    jLabelPion_18_3.setVisible(true);
+                    break;
 
-            case 19:
-                rendreAllInvisible(3);
-                jLabelPion_19_3.setVisible(true);
-                break;
+                case 19:
+                    rendreAllInvisible(3);
+                    jLabelPion_19_3.setVisible(true);
+                    break;
 
-            case 20:
-                rendreAllInvisible(3);
-                jLabelPion_20_3.setVisible(true);
-                break;
+                case 20:
+                    rendreAllInvisible(3);
+                    jLabelPion_20_3.setVisible(true);
+                    break;
 
-            case 21:
-                rendreAllInvisible(3);
-                jLabelPion_21_3.setVisible(true);
-                break;
+                case 21:
+                    rendreAllInvisible(3);
+                    jLabelPion_21_3.setVisible(true);
+                    break;
 
-            case 22:
-                rendreAllInvisible(3);
-                jLabelPion_22_3.setVisible(true);
-                break;
+                case 22:
+                    rendreAllInvisible(3);
+                    jLabelPion_22_3.setVisible(true);
+                    break;
 
-            case 23:
-                rendreAllInvisible(3);
-                jLabelPion_23_3.setVisible(true);
-                break;
+                case 23:
+                    rendreAllInvisible(3);
+                    jLabelPion_23_3.setVisible(true);
+                    break;
 
-            case 24:
-                rendreAllInvisible(3);
-                jLabelPion_24_3.setVisible(true);
-                break;
+                case 24:
+                    rendreAllInvisible(3);
+                    jLabelPion_24_3.setVisible(true);
+                    break;
 
-            case 25:
-                rendreAllInvisible(3);
-                jLabelPion_25_3.setVisible(true);
-                break;
+                case 25:
+                    rendreAllInvisible(3);
+                    jLabelPion_25_3.setVisible(true);
+                    break;
 
-            case 26:
-                rendreAllInvisible(3);
-                jLabelPion_26_3.setVisible(true);
-                break;
+                case 26:
+                    rendreAllInvisible(3);
+                    jLabelPion_26_3.setVisible(true);
+                    break;
 
-            case 27:
-                rendreAllInvisible(3);
-                jLabelPion_27_3.setVisible(true);
-                break;
+                case 27:
+                    rendreAllInvisible(3);
+                    jLabelPion_27_3.setVisible(true);
+                    break;
 
-            case 28:
-                rendreAllInvisible(3);
-                jLabelPion_28_3.setVisible(true);
-                break;
+                case 28:
+                    rendreAllInvisible(3);
+                    jLabelPion_28_3.setVisible(true);
+                    break;
 
-            case 29:
-                rendreAllInvisible(3);
-                jLabelPion_29_3.setVisible(true);
-                break;
+                case 29:
+                    rendreAllInvisible(3);
+                    jLabelPion_29_3.setVisible(true);
+                    break;
 
-            case 30:
-                rendreAllInvisible(3);
-                jLabelPion_30_3.setVisible(true);
-                break;
+                case 30:
+                    rendreAllInvisible(3);
+                    jLabelPion_30_3.setVisible(true);
+                    break;
 
-            case 31:
-                rendreAllInvisible(3);
-                jLabelPion_31_3.setVisible(true);
-                break;
+                case 31:
+                    rendreAllInvisible(3);
+                    jLabelPion_31_3.setVisible(true);
+                    break;
 
-            case 32:
-                rendreAllInvisible(3);
-                jLabelPion_32_3.setVisible(true);
-                break;
+                case 32:
+                    rendreAllInvisible(3);
+                    jLabelPion_32_3.setVisible(true);
+                    break;
 
-            case 33:
-                rendreAllInvisible(3);
-                jLabelPion_33_3.setVisible(true);
-                break;
+                case 33:
+                    rendreAllInvisible(3);
+                    jLabelPion_33_3.setVisible(true);
+                    break;
 
-            case 34:
-                rendreAllInvisible(3);
-                jLabelPion_34_3.setVisible(true);
-                break;
+                case 34:
+                    rendreAllInvisible(3);
+                    jLabelPion_34_3.setVisible(true);
+                    break;
 
-            case 35:
-                rendreAllInvisible(3);
-                jLabelPion_35_3.setVisible(true);
-                break;
+                case 35:
+                    rendreAllInvisible(3);
+                    jLabelPion_35_3.setVisible(true);
+                    break;
 
-            case 36:
-                rendreAllInvisible(3);
-                jLabelPion_36_3.setVisible(true);
-                break;
+                case 36:
+                    rendreAllInvisible(3);
+                    jLabelPion_36_3.setVisible(true);
+                    break;
 
-            case 37:
-                rendreAllInvisible(3);
-                jLabelPion_37_3.setVisible(true);
-                break;
+                case 37:
+                    rendreAllInvisible(3);
+                    jLabelPion_37_3.setVisible(true);
+                    break;
 
-            case 38:
-                rendreAllInvisible(3);
-                jLabelPion_38_3.setVisible(true);
-                break;
+                case 38:
+                    rendreAllInvisible(3);
+                    jLabelPion_38_3.setVisible(true);
+                    break;
 
-            case 39:
-                rendreAllInvisible(3);
-                jLabelPion_39_3.setVisible(true);
-                break;
+                case 39:
+                    rendreAllInvisible(3);
+                    jLabelPion_39_3.setVisible(true);
+                    break;
 
-            case 40:
-                rendreAllInvisible(3);
-                jLabelPion_40_3.setVisible(true);
-                break;
+                case 40:
+                    rendreAllInvisible(3);
+                    jLabelPion_40_3.setVisible(true);
+                    break;
 
+            }
         }
-    }if(choix_joueurs.joueurs.get(i-1).getIcone()==4){
-        switch (choix_joueurs.joueurs.get(i-1).getPos()) {
+        if (choix_joueurs.joueurs.get(i - 1).getIcone() == 4) {
+            switch (choix_joueurs.joueurs.get(i - 1).getPos()) {
 
-            case 1:
-                rendreAllInvisible(4);
-                jLabelPion_1_4.setVisible(true);
-                break;
+                case 1:
+                    rendreAllInvisible(4);
+                    jLabelPion_1_4.setVisible(true);
+                    break;
 
-            case 2:
-                rendreAllInvisible(4);
-                jLabelPion_2_4.setVisible(true);
-                break;
+                case 2:
+                    rendreAllInvisible(4);
+                    jLabelPion_2_4.setVisible(true);
+                    break;
 
-            case 3:
-                rendreAllInvisible(4);
-                jLabelPion_3_4.setVisible(true);
-                break;
+                case 3:
+                    rendreAllInvisible(4);
+                    jLabelPion_3_4.setVisible(true);
+                    break;
 
-            case 4:
-                rendreAllInvisible(4);
-                jLabelPion_4_4.setVisible(true);
-                break;
+                case 4:
+                    rendreAllInvisible(4);
+                    jLabelPion_4_4.setVisible(true);
+                    break;
 
-            case 5:
-                rendreAllInvisible(4);
-                jLabelPion_5_4.setVisible(true);
-                break;
+                case 5:
+                    rendreAllInvisible(4);
+                    jLabelPion_5_4.setVisible(true);
+                    break;
 
-            case 6:
-                rendreAllInvisible(4);
-                jLabelPion_6_4.setVisible(true);
-                break;
+                case 6:
+                    rendreAllInvisible(4);
+                    jLabelPion_6_4.setVisible(true);
+                    break;
 
-            case 7:
-                rendreAllInvisible(4);
-                jLabelPion_7_4.setVisible(true);
-                break;
+                case 7:
+                    rendreAllInvisible(4);
+                    jLabelPion_7_4.setVisible(true);
+                    break;
 
-            case 8:
-                rendreAllInvisible(4);
-                jLabelPion_8_4.setVisible(true);
-                break;
+                case 8:
+                    rendreAllInvisible(4);
+                    jLabelPion_8_4.setVisible(true);
+                    break;
 
-            case 9:
-                rendreAllInvisible(4);
-                jLabelPion_9_4.setVisible(true);
-                break;
+                case 9:
+                    rendreAllInvisible(4);
+                    jLabelPion_9_4.setVisible(true);
+                    break;
 
-            case 10:
-                rendreAllInvisible(4);
-                jLabelPion_10_4.setVisible(true);
-                break;
+                case 10:
+                    rendreAllInvisible(4);
+                    jLabelPion_10_4.setVisible(true);
+                    break;
 
-            case 11:
-                rendreAllInvisible(4);
-                jLabelPion_11_4.setVisible(true);
-                break;
+                case 11:
+                    rendreAllInvisible(4);
+                    jLabelPion_11_4.setVisible(true);
+                    break;
 
-            case 12:
-                rendreAllInvisible(4);
-                jLabelPion_12_4.setVisible(true);
-                break;
+                case 12:
+                    rendreAllInvisible(4);
+                    jLabelPion_12_4.setVisible(true);
+                    break;
 
-            case 13:
-                rendreAllInvisible(4);
-                jLabelPion_13_4.setVisible(true);
-                break;
+                case 13:
+                    rendreAllInvisible(4);
+                    jLabelPion_13_4.setVisible(true);
+                    break;
 
-            case 14:
-                rendreAllInvisible(4);
-                jLabelPion_14_4.setVisible(true);
-                break;
+                case 14:
+                    rendreAllInvisible(4);
+                    jLabelPion_14_4.setVisible(true);
+                    break;
 
-            case 15:
-                rendreAllInvisible(4);
-                jLabelPion_15_4.setVisible(true);
-                break;
+                case 15:
+                    rendreAllInvisible(4);
+                    jLabelPion_15_4.setVisible(true);
+                    break;
 
-            case 16:
-                rendreAllInvisible(4);
-                jLabelPion_16_4.setVisible(true);
-                break;
+                case 16:
+                    rendreAllInvisible(4);
+                    jLabelPion_16_4.setVisible(true);
+                    break;
 
-            case 17:
-                rendreAllInvisible(4);
-                jLabelPion_17_4.setVisible(true);
-                break;
+                case 17:
+                    rendreAllInvisible(4);
+                    jLabelPion_17_4.setVisible(true);
+                    break;
 
-            case 18:
-                rendreAllInvisible(4);
-                jLabelPion_18_4.setVisible(true);
-                break;
+                case 18:
+                    rendreAllInvisible(4);
+                    jLabelPion_18_4.setVisible(true);
+                    break;
 
-            case 19:
-                rendreAllInvisible(4);
-                jLabelPion_19_4.setVisible(true);
-                break;
+                case 19:
+                    rendreAllInvisible(4);
+                    jLabelPion_19_4.setVisible(true);
+                    break;
 
-            case 20:
-                rendreAllInvisible(4);
-                jLabelPion_20_4.setVisible(true);
-                break;
+                case 20:
+                    rendreAllInvisible(4);
+                    jLabelPion_20_4.setVisible(true);
+                    break;
 
-            case 21:
-                rendreAllInvisible(4);
-                jLabelPion_21_4.setVisible(true);
-                break;
+                case 21:
+                    rendreAllInvisible(4);
+                    jLabelPion_21_4.setVisible(true);
+                    break;
 
-            case 22:
-                rendreAllInvisible(4);
-                jLabelPion_22_4.setVisible(true);
-                break;
+                case 22:
+                    rendreAllInvisible(4);
+                    jLabelPion_22_4.setVisible(true);
+                    break;
 
-            case 23:
-                rendreAllInvisible(4);
-                jLabelPion_23_4.setVisible(true);
-                break;
+                case 23:
+                    rendreAllInvisible(4);
+                    jLabelPion_23_4.setVisible(true);
+                    break;
 
-            case 24:
-                rendreAllInvisible(4);
-                jLabelPion_24_4.setVisible(true);
-                break;
+                case 24:
+                    rendreAllInvisible(4);
+                    jLabelPion_24_4.setVisible(true);
+                    break;
 
-            case 25:
-                rendreAllInvisible(4);
-                jLabelPion_25_4.setVisible(true);
-                break;
+                case 25:
+                    rendreAllInvisible(4);
+                    jLabelPion_25_4.setVisible(true);
+                    break;
 
-            case 26:
-                rendreAllInvisible(4);
-                jLabelPion_26_4.setVisible(true);
-                break;
+                case 26:
+                    rendreAllInvisible(4);
+                    jLabelPion_26_4.setVisible(true);
+                    break;
 
-            case 27:
-                rendreAllInvisible(4);
-                jLabelPion_27_4.setVisible(true);
-                break;
+                case 27:
+                    rendreAllInvisible(4);
+                    jLabelPion_27_4.setVisible(true);
+                    break;
 
-            case 28:
-                rendreAllInvisible(4);
-                jLabelPion_28_4.setVisible(true);
-                break;
+                case 28:
+                    rendreAllInvisible(4);
+                    jLabelPion_28_4.setVisible(true);
+                    break;
 
-            case 29:
-                rendreAllInvisible(4);
-                jLabelPion_29_4.setVisible(true);
-                break;
+                case 29:
+                    rendreAllInvisible(4);
+                    jLabelPion_29_4.setVisible(true);
+                    break;
 
-            case 30:
-                rendreAllInvisible(4);
-                jLabelPion_30_4.setVisible(true);
-                break;
+                case 30:
+                    rendreAllInvisible(4);
+                    jLabelPion_30_4.setVisible(true);
+                    break;
 
-            case 31:
-                rendreAllInvisible(4);
-                jLabelPion_31_4.setVisible(true);
-                break;
+                case 31:
+                    rendreAllInvisible(4);
+                    jLabelPion_31_4.setVisible(true);
+                    break;
 
-            case 32:
-                rendreAllInvisible(4);
-                jLabelPion_32_4.setVisible(true);
-                break;
+                case 32:
+                    rendreAllInvisible(4);
+                    jLabelPion_32_4.setVisible(true);
+                    break;
 
-            case 33:
-                rendreAllInvisible(4);
-                jLabelPion_33_4.setVisible(true);
-                break;
+                case 33:
+                    rendreAllInvisible(4);
+                    jLabelPion_33_4.setVisible(true);
+                    break;
 
-            case 34:
-                rendreAllInvisible(4);
-                jLabelPion_34_4.setVisible(true);
-                break;
+                case 34:
+                    rendreAllInvisible(4);
+                    jLabelPion_34_4.setVisible(true);
+                    break;
 
-            case 35:
-                rendreAllInvisible(4);
-                jLabelPion_35_4.setVisible(true);
-                break;
+                case 35:
+                    rendreAllInvisible(4);
+                    jLabelPion_35_4.setVisible(true);
+                    break;
 
-            case 36:
-                rendreAllInvisible(4);
-                jLabelPion_36_4.setVisible(true);
-                break;
+                case 36:
+                    rendreAllInvisible(4);
+                    jLabelPion_36_4.setVisible(true);
+                    break;
 
-            case 37:
-                rendreAllInvisible(4);
-                jLabelPion_37_4.setVisible(true);
-                break;
+                case 37:
+                    rendreAllInvisible(4);
+                    jLabelPion_37_4.setVisible(true);
+                    break;
 
-            case 38:
-                rendreAllInvisible(4);
-                jLabelPion_38_4.setVisible(true);
-                break;
+                case 38:
+                    rendreAllInvisible(4);
+                    jLabelPion_38_4.setVisible(true);
+                    break;
 
-            case 39:
-                rendreAllInvisible(4);
-                jLabelPion_39_4.setVisible(true);
-                break;
+                case 39:
+                    rendreAllInvisible(4);
+                    jLabelPion_39_4.setVisible(true);
+                    break;
 
-            case 40:
-                rendreAllInvisible(4);
-                jLabelPion_40_4.setVisible(true);
-                break;
+                case 40:
+                    rendreAllInvisible(4);
+                    jLabelPion_40_4.setVisible(true);
+                    break;
 
+            }
         }
-    }
     }
 
     @SuppressWarnings("empty-statement")
     public static void rendreAllInvisible(int i) {
-        if(i==1){
-        jLabelPion_1_1.setVisible(false);
-        jLabelPion_10_1.setVisible(false);
-        jLabelPion_11_1.setVisible(false);
-        jLabelPion_12_1.setVisible(false);
-        jLabelPion_13_1.setVisible(false);
-        jLabelPion_14_1.setVisible(false);
-        jLabelPion_15_1.setVisible(false);
-        jLabelPion_16_1.setVisible(false);
-        jLabelPion_17_1.setVisible(false);
-        jLabelPion_18_1.setVisible(false);
-        jLabelPion_19_1.setVisible(false);
-        jLabelPion_20_1.setVisible(false);
-        jLabelPion_21_1.setVisible(false);
-        jLabelPion_22_1.setVisible(false);
-        jLabelPion_23_1.setVisible(false);
-        jLabelPion_24_1.setVisible(false);
-        jLabelPion_25_1.setVisible(false);
-        jLabelPion_26_1.setVisible(false);
-        jLabelPion_27_1.setVisible(false);
-        jLabelPion_28_1.setVisible(false);
-        jLabelPion_29_1.setVisible(false);
-        jLabelPion_2_1.setVisible(false);
-        jLabelPion_30_1.setVisible(false);;
-        jLabelPion_31_1.setVisible(false);
-        jLabelPion_32_1.setVisible(false);
-        jLabelPion_33_1.setVisible(false);
-        jLabelPion_34_1.setVisible(false);
-        jLabelPion_35_1.setVisible(false);
-        jLabelPion_36_1.setVisible(false);
-        jLabelPion_37_1.setVisible(false);
-        jLabelPion_38_1.setVisible(false);
-        jLabelPion_39_1.setVisible(false);
-        jLabelPion_3_1.setVisible(false);
-        jLabelPion_40_1.setVisible(false);
-        jLabelPion_4_1.setVisible(false);
-        jLabelPion_5_1.setVisible(false);
-        jLabelPion_6_1.setVisible(false);
-        jLabelPion_7_1.setVisible(false);
-        jLabelPion_8_1.setVisible(false);
-        jLabelPion_9_1.setVisible(false);
+        if (i == 1) {
+            jLabelPion_1_1.setVisible(false);
+            jLabelPion_10_1.setVisible(false);
+            jLabelPion_11_1.setVisible(false);
+            jLabelPion_12_1.setVisible(false);
+            jLabelPion_13_1.setVisible(false);
+            jLabelPion_14_1.setVisible(false);
+            jLabelPion_15_1.setVisible(false);
+            jLabelPion_16_1.setVisible(false);
+            jLabelPion_17_1.setVisible(false);
+            jLabelPion_18_1.setVisible(false);
+            jLabelPion_19_1.setVisible(false);
+            jLabelPion_20_1.setVisible(false);
+            jLabelPion_21_1.setVisible(false);
+            jLabelPion_22_1.setVisible(false);
+            jLabelPion_23_1.setVisible(false);
+            jLabelPion_24_1.setVisible(false);
+            jLabelPion_25_1.setVisible(false);
+            jLabelPion_26_1.setVisible(false);
+            jLabelPion_27_1.setVisible(false);
+            jLabelPion_28_1.setVisible(false);
+            jLabelPion_29_1.setVisible(false);
+            jLabelPion_2_1.setVisible(false);
+            jLabelPion_30_1.setVisible(false);;
+            jLabelPion_31_1.setVisible(false);
+            jLabelPion_32_1.setVisible(false);
+            jLabelPion_33_1.setVisible(false);
+            jLabelPion_34_1.setVisible(false);
+            jLabelPion_35_1.setVisible(false);
+            jLabelPion_36_1.setVisible(false);
+            jLabelPion_37_1.setVisible(false);
+            jLabelPion_38_1.setVisible(false);
+            jLabelPion_39_1.setVisible(false);
+            jLabelPion_3_1.setVisible(false);
+            jLabelPion_40_1.setVisible(false);
+            jLabelPion_4_1.setVisible(false);
+            jLabelPion_5_1.setVisible(false);
+            jLabelPion_6_1.setVisible(false);
+            jLabelPion_7_1.setVisible(false);
+            jLabelPion_8_1.setVisible(false);
+            jLabelPion_9_1.setVisible(false);
         }
-        if(i==2){
-        jLabelPion_1_2.setVisible(false);
-        jLabelPion_10_2.setVisible(false);
-        jLabelPion_11_2.setVisible(false);
-        jLabelPion_12_2.setVisible(false);
-        jLabelPion_13_2.setVisible(false);
-        jLabelPion_14_2.setVisible(false);
-        jLabelPion_15_2.setVisible(false);
-        jLabelPion_16_2.setVisible(false);
-        jLabelPion_17_2.setVisible(false);
-        jLabelPion_18_2.setVisible(false);
-        jLabelPion_19_2.setVisible(false);
-        jLabelPion_20_2.setVisible(false);
-        jLabelPion_21_2.setVisible(false);
-        jLabelPion_22_2.setVisible(false);
-        jLabelPion_23_2.setVisible(false);
-        jLabelPion_24_2.setVisible(false);
-        jLabelPion_25_2.setVisible(false);
-        jLabelPion_26_2.setVisible(false);
-        jLabelPion_27_2.setVisible(false);
-        jLabelPion_28_2.setVisible(false);
-        jLabelPion_29_2.setVisible(false);
-        jLabelPion_2_2.setVisible(false);
-        jLabelPion_30_2.setVisible(false);;
-        jLabelPion_31_2.setVisible(false);
-        jLabelPion_32_2.setVisible(false);
-        jLabelPion_33_2.setVisible(false);
-        jLabelPion_34_2.setVisible(false);
-        jLabelPion_35_2.setVisible(false);
-        jLabelPion_36_2.setVisible(false);
-        jLabelPion_37_2.setVisible(false);
-        jLabelPion_38_2.setVisible(false);
-        jLabelPion_39_2.setVisible(false);
-        jLabelPion_3_2.setVisible(false);
-        jLabelPion_40_2.setVisible(false);
-        jLabelPion_4_2.setVisible(false);
-        jLabelPion_5_2.setVisible(false);
-        jLabelPion_6_2.setVisible(false);
-        jLabelPion_7_2.setVisible(false);
-        jLabelPion_8_2.setVisible(false);
-        jLabelPion_9_2.setVisible(false);
+        if (i == 2) {
+            jLabelPion_1_2.setVisible(false);
+            jLabelPion_10_2.setVisible(false);
+            jLabelPion_11_2.setVisible(false);
+            jLabelPion_12_2.setVisible(false);
+            jLabelPion_13_2.setVisible(false);
+            jLabelPion_14_2.setVisible(false);
+            jLabelPion_15_2.setVisible(false);
+            jLabelPion_16_2.setVisible(false);
+            jLabelPion_17_2.setVisible(false);
+            jLabelPion_18_2.setVisible(false);
+            jLabelPion_19_2.setVisible(false);
+            jLabelPion_20_2.setVisible(false);
+            jLabelPion_21_2.setVisible(false);
+            jLabelPion_22_2.setVisible(false);
+            jLabelPion_23_2.setVisible(false);
+            jLabelPion_24_2.setVisible(false);
+            jLabelPion_25_2.setVisible(false);
+            jLabelPion_26_2.setVisible(false);
+            jLabelPion_27_2.setVisible(false);
+            jLabelPion_28_2.setVisible(false);
+            jLabelPion_29_2.setVisible(false);
+            jLabelPion_2_2.setVisible(false);
+            jLabelPion_30_2.setVisible(false);;
+            jLabelPion_31_2.setVisible(false);
+            jLabelPion_32_2.setVisible(false);
+            jLabelPion_33_2.setVisible(false);
+            jLabelPion_34_2.setVisible(false);
+            jLabelPion_35_2.setVisible(false);
+            jLabelPion_36_2.setVisible(false);
+            jLabelPion_37_2.setVisible(false);
+            jLabelPion_38_2.setVisible(false);
+            jLabelPion_39_2.setVisible(false);
+            jLabelPion_3_2.setVisible(false);
+            jLabelPion_40_2.setVisible(false);
+            jLabelPion_4_2.setVisible(false);
+            jLabelPion_5_2.setVisible(false);
+            jLabelPion_6_2.setVisible(false);
+            jLabelPion_7_2.setVisible(false);
+            jLabelPion_8_2.setVisible(false);
+            jLabelPion_9_2.setVisible(false);
         }
-        if(i==3){
-        jLabelPion_1_3.setVisible(false);
-        jLabelPion_10_3.setVisible(false);
-        jLabelPion_11_3.setVisible(false);
-        jLabelPion_12_3.setVisible(false);
-        jLabelPion_13_3.setVisible(false);
-        jLabelPion_14_3.setVisible(false);
-        jLabelPion_15_3.setVisible(false);
-        jLabelPion_16_3.setVisible(false);
-        jLabelPion_17_3.setVisible(false);
-        jLabelPion_18_3.setVisible(false);
-        jLabelPion_19_3.setVisible(false);
-        jLabelPion_20_3.setVisible(false);
-        jLabelPion_21_3.setVisible(false);
-        jLabelPion_22_3.setVisible(false);
-        jLabelPion_23_3.setVisible(false);
-        jLabelPion_24_3.setVisible(false);
-        jLabelPion_25_3.setVisible(false);
-        jLabelPion_26_3.setVisible(false);
-        jLabelPion_27_3.setVisible(false);
-        jLabelPion_28_3.setVisible(false);
-        jLabelPion_29_3.setVisible(false);
-        jLabelPion_2_3.setVisible(false);
-        jLabelPion_30_3.setVisible(false);;
-        jLabelPion_31_3.setVisible(false);
-        jLabelPion_32_3.setVisible(false);
-        jLabelPion_33_3.setVisible(false);
-        jLabelPion_34_3.setVisible(false);
-        jLabelPion_35_3.setVisible(false);
-        jLabelPion_36_3.setVisible(false);
-        jLabelPion_37_3.setVisible(false);
-        jLabelPion_38_3.setVisible(false);
-        jLabelPion_39_3.setVisible(false);
-        jLabelPion_3_3.setVisible(false);
-        jLabelPion_40_3.setVisible(false);
-        jLabelPion_4_3.setVisible(false);
-        jLabelPion_5_3.setVisible(false);
-        jLabelPion_6_3.setVisible(false);
-        jLabelPion_7_3.setVisible(false);
-        jLabelPion_8_3.setVisible(false);
-        jLabelPion_9_3.setVisible(false);
+        if (i == 3) {
+            jLabelPion_1_3.setVisible(false);
+            jLabelPion_10_3.setVisible(false);
+            jLabelPion_11_3.setVisible(false);
+            jLabelPion_12_3.setVisible(false);
+            jLabelPion_13_3.setVisible(false);
+            jLabelPion_14_3.setVisible(false);
+            jLabelPion_15_3.setVisible(false);
+            jLabelPion_16_3.setVisible(false);
+            jLabelPion_17_3.setVisible(false);
+            jLabelPion_18_3.setVisible(false);
+            jLabelPion_19_3.setVisible(false);
+            jLabelPion_20_3.setVisible(false);
+            jLabelPion_21_3.setVisible(false);
+            jLabelPion_22_3.setVisible(false);
+            jLabelPion_23_3.setVisible(false);
+            jLabelPion_24_3.setVisible(false);
+            jLabelPion_25_3.setVisible(false);
+            jLabelPion_26_3.setVisible(false);
+            jLabelPion_27_3.setVisible(false);
+            jLabelPion_28_3.setVisible(false);
+            jLabelPion_29_3.setVisible(false);
+            jLabelPion_2_3.setVisible(false);
+            jLabelPion_30_3.setVisible(false);;
+            jLabelPion_31_3.setVisible(false);
+            jLabelPion_32_3.setVisible(false);
+            jLabelPion_33_3.setVisible(false);
+            jLabelPion_34_3.setVisible(false);
+            jLabelPion_35_3.setVisible(false);
+            jLabelPion_36_3.setVisible(false);
+            jLabelPion_37_3.setVisible(false);
+            jLabelPion_38_3.setVisible(false);
+            jLabelPion_39_3.setVisible(false);
+            jLabelPion_3_3.setVisible(false);
+            jLabelPion_40_3.setVisible(false);
+            jLabelPion_4_3.setVisible(false);
+            jLabelPion_5_3.setVisible(false);
+            jLabelPion_6_3.setVisible(false);
+            jLabelPion_7_3.setVisible(false);
+            jLabelPion_8_3.setVisible(false);
+            jLabelPion_9_3.setVisible(false);
         }
-        if(i==4){
-        jLabelPion_1_4.setVisible(false);
-        jLabelPion_10_4.setVisible(false);
-        jLabelPion_11_4.setVisible(false);
-        jLabelPion_12_4.setVisible(false);
-        jLabelPion_13_4.setVisible(false);
-        jLabelPion_14_4.setVisible(false);
-        jLabelPion_15_4.setVisible(false);
-        jLabelPion_16_4.setVisible(false);
-        jLabelPion_17_4.setVisible(false);
-        jLabelPion_18_4.setVisible(false);
-        jLabelPion_19_4.setVisible(false);
-        jLabelPion_20_4.setVisible(false);
-        jLabelPion_21_4.setVisible(false);
-        jLabelPion_22_4.setVisible(false);
-        jLabelPion_23_4.setVisible(false);
-        jLabelPion_24_4.setVisible(false);
-        jLabelPion_25_4.setVisible(false);
-        jLabelPion_26_4.setVisible(false);
-        jLabelPion_27_4.setVisible(false);
-        jLabelPion_28_4.setVisible(false);
-        jLabelPion_29_4.setVisible(false);
-        jLabelPion_2_4.setVisible(false);
-        jLabelPion_30_4.setVisible(false);;
-        jLabelPion_31_4.setVisible(false);
-        jLabelPion_32_4.setVisible(false);
-        jLabelPion_33_4.setVisible(false);
-        jLabelPion_34_4.setVisible(false);
-        jLabelPion_35_4.setVisible(false);
-        jLabelPion_36_4.setVisible(false);
-        jLabelPion_37_4.setVisible(false);
-        jLabelPion_38_4.setVisible(false);
-        jLabelPion_39_4.setVisible(false);
-        jLabelPion_3_4.setVisible(false);
-        jLabelPion_40_4.setVisible(false);
-        jLabelPion_4_4.setVisible(false);
-        jLabelPion_5_4.setVisible(false);
-        jLabelPion_6_4.setVisible(false);
-        jLabelPion_7_4.setVisible(false);
-        jLabelPion_8_4.setVisible(false);
-        jLabelPion_9_4.setVisible(false);
+        if (i == 4) {
+            jLabelPion_1_4.setVisible(false);
+            jLabelPion_10_4.setVisible(false);
+            jLabelPion_11_4.setVisible(false);
+            jLabelPion_12_4.setVisible(false);
+            jLabelPion_13_4.setVisible(false);
+            jLabelPion_14_4.setVisible(false);
+            jLabelPion_15_4.setVisible(false);
+            jLabelPion_16_4.setVisible(false);
+            jLabelPion_17_4.setVisible(false);
+            jLabelPion_18_4.setVisible(false);
+            jLabelPion_19_4.setVisible(false);
+            jLabelPion_20_4.setVisible(false);
+            jLabelPion_21_4.setVisible(false);
+            jLabelPion_22_4.setVisible(false);
+            jLabelPion_23_4.setVisible(false);
+            jLabelPion_24_4.setVisible(false);
+            jLabelPion_25_4.setVisible(false);
+            jLabelPion_26_4.setVisible(false);
+            jLabelPion_27_4.setVisible(false);
+            jLabelPion_28_4.setVisible(false);
+            jLabelPion_29_4.setVisible(false);
+            jLabelPion_2_4.setVisible(false);
+            jLabelPion_30_4.setVisible(false);;
+            jLabelPion_31_4.setVisible(false);
+            jLabelPion_32_4.setVisible(false);
+            jLabelPion_33_4.setVisible(false);
+            jLabelPion_34_4.setVisible(false);
+            jLabelPion_35_4.setVisible(false);
+            jLabelPion_36_4.setVisible(false);
+            jLabelPion_37_4.setVisible(false);
+            jLabelPion_38_4.setVisible(false);
+            jLabelPion_39_4.setVisible(false);
+            jLabelPion_3_4.setVisible(false);
+            jLabelPion_40_4.setVisible(false);
+            jLabelPion_4_4.setVisible(false);
+            jLabelPion_5_4.setVisible(false);
+            jLabelPion_6_4.setVisible(false);
+            jLabelPion_7_4.setVisible(false);
+            jLabelPion_8_4.setVisible(false);
+            jLabelPion_9_4.setVisible(false);
         }
-       
-    }
 
-   
+    }
 
     public void rendreAllInvisible() {
 
@@ -1776,6 +1837,7 @@ public class Partie_Monopoly extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel29 = new javax.swing.JLabel();
         propr32 = new javax.swing.JLabel();
         propr33 = new javax.swing.JLabel();
         propr34 = new javax.swing.JLabel();
@@ -1990,10 +2052,40 @@ public class Partie_Monopoly extends javax.swing.JFrame {
         jLabelPion_40_7 = new javax.swing.JLabel();
         jLabelPion_40_8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         joueur_courant = new javax.swing.JLabel();
         jLabelDe1 = new javax.swing.JLabel();
         jLabelDe2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         nom_joueur1 = new javax.swing.JLabel();
@@ -2004,12 +2096,18 @@ public class Partie_Monopoly extends javax.swing.JFrame {
         solde_joueur_2 = new javax.swing.JLabel();
         solde_joueur_3 = new javax.swing.JLabel();
         solde_joueur_4 = new javax.swing.JLabel();
+        plateau_3 = new javax.swing.JLabel();
         plateau_1 = new javax.swing.JLabel();
         plateau_2 = new javax.swing.JLabel();
-        plateau_3 = new javax.swing.JLabel();
+
+        jLabel29.setText("jLabel3");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("monopoly/app/Bundle"); // NOI18N
+        jLabel29.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAutoRequestFocus(false);
         setMinimumSize(new java.awt.Dimension(1357, 705));
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -2772,6 +2870,8 @@ public class Partie_Monopoly extends javax.swing.JFrame {
         jLabelPion_29_3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(jLabelPion_29_3);
         jLabelPion_29_3.setBounds(530, 20, 16, 16);
+
+        jLabelPion_29_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/pion4.png"))); // NOI18N
         getContentPane().add(jLabelPion_29_4);
         jLabelPion_29_4.setBounds(530, 40, 16, 16);
 
@@ -3084,6 +3184,178 @@ public class Partie_Monopoly extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(10, 0, 710, 710);
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/1.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(751, 306, 20, 20);
+        jLabel3.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/1.jpg"))); // NOI18N
+        jLabel5.setText("jLabel3");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(778, 306, 20, 20);
+        jLabel5.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/2.jpg"))); // NOI18N
+        jLabel6.setText("jLabel3");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(750, 334, 20, 20);
+        jLabel6.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/2.jpg"))); // NOI18N
+        jLabel7.setText("jLabel3");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(778, 334, 20, 20);
+        jLabel7.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/2.jpg"))); // NOI18N
+        jLabel8.setText("jLabel3");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(807, 335, 20, 20);
+        jLabel8.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/3.jpg"))); // NOI18N
+        jLabel9.setText("jLabel3");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(750, 364, 20, 20);
+        jLabel9.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/3.jpg"))); // NOI18N
+        jLabel10.setText("jLabel3");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(778, 364, 20, 20);
+        jLabel10.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/3.jpg"))); // NOI18N
+        jLabel11.setText("jLabel3");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(806, 365, 20, 20);
+        jLabel11.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/4.jpg"))); // NOI18N
+        jLabel12.setText("jLabel3");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(750, 396, 20, 20);
+        jLabel12.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/4.jpg"))); // NOI18N
+        jLabel13.setText("jLabel3");
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(778, 396, 20, 20);
+        jLabel13.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/4.jpg"))); // NOI18N
+        jLabel14.setText("jLabel3");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(806, 396, 20, 20);
+        jLabel14.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/5.jpg"))); // NOI18N
+        jLabel15.setText("jLabel3");
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(750, 426, 20, 20);
+        jLabel15.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/5.jpg"))); // NOI18N
+        jLabel16.setText("jLabel3");
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(778, 426, 20, 20);
+        jLabel16.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/5.jpg"))); // NOI18N
+        jLabel17.setText("jLabel3");
+        getContentPane().add(jLabel17);
+        jLabel17.setBounds(806, 426, 20, 20);
+        jLabel17.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/6.jpg"))); // NOI18N
+        jLabel18.setText("jLabel3");
+        getContentPane().add(jLabel18);
+        jLabel18.setBounds(834, 306, 20, 20);
+        jLabel18.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/6.jpg"))); // NOI18N
+        jLabel19.setText("jLabel3");
+        getContentPane().add(jLabel19);
+        jLabel19.setBounds(860, 306, 20, 20);
+        jLabel19.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/6.jpg"))); // NOI18N
+        jLabel20.setText("jLabel3");
+        getContentPane().add(jLabel20);
+        jLabel20.setBounds(887, 306, 20, 20);
+        jLabel20.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/7.jpg"))); // NOI18N
+        jLabel21.setText("jLabel3");
+        getContentPane().add(jLabel21);
+        jLabel21.setBounds(834, 335, 20, 20);
+        jLabel21.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/7.jpg"))); // NOI18N
+        jLabel22.setText("jLabel3");
+        getContentPane().add(jLabel22);
+        jLabel22.setBounds(860, 334, 20, 20);
+        jLabel22.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/7.jpg"))); // NOI18N
+        jLabel23.setText("jLabel3");
+        getContentPane().add(jLabel23);
+        jLabel23.setBounds(887, 334, 20, 20);
+        jLabel23.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/8.jpg"))); // NOI18N
+        jLabel24.setText("jLabel3");
+        getContentPane().add(jLabel24);
+        jLabel24.setBounds(834, 366, 20, 20);
+        jLabel24.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/8.jpg"))); // NOI18N
+        jLabel25.setText("jLabel3");
+        getContentPane().add(jLabel25);
+        jLabel25.setBounds(860, 366, 20, 20);
+        jLabel25.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/9.jpg"))); // NOI18N
+        jLabel26.setText("jLabel3");
+        getContentPane().add(jLabel26);
+        jLabel26.setBounds(834, 395, 20, 20);
+        jLabel26.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/9.jpg"))); // NOI18N
+        jLabel27.setText("jLabel3");
+        getContentPane().add(jLabel27);
+        jLabel27.setBounds(860, 394, 20, 20);
+        jLabel27.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/10.jpg"))); // NOI18N
+        jLabel28.setText("jLabel3");
+        getContentPane().add(jLabel28);
+        jLabel28.setBounds(834, 426, 20, 20);
+        jLabel28.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/10.jpg"))); // NOI18N
+        jLabel30.setText("jLabel3");
+        getContentPane().add(jLabel30);
+        jLabel30.setBounds(860, 426, 20, 20);
+        jLabel30.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/10.jpg"))); // NOI18N
+        jLabel31.setText("jLabel3");
+        getContentPane().add(jLabel31);
+        jLabel31.setBounds(887, 426, 20, 20);
+        jLabel31.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/10.jpg"))); // NOI18N
+        jLabel32.setText("jLabel3");
+        getContentPane().add(jLabel32);
+        jLabel32.setBounds(914, 426, 20, 20);
+        jLabel32.getAccessibleContext().setAccessibleName(bundle.getString("i")); // NOI18N
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/cartes.png"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(740, 290, 200, 170);
+
         joueur_courant.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         joueur_courant.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(joueur_courant);
@@ -3098,6 +3370,15 @@ public class Partie_Monopoly extends javax.swing.JFrame {
         jLabelDe2.setBounds(860, 80, 70, 60);
         getContentPane().add(jLabel4);
         jLabel4.setBounds(800, 80, 50, 60);
+
+        jButton2.setText("Proposer echange");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(780, 240, 119, 23);
 
         jButton1.setText("Lancer");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -3130,7 +3411,7 @@ public class Partie_Monopoly extends javax.swing.JFrame {
         getContentPane().add(nom_joueur4);
         nom_joueur4.setBounds(1140, 400, 100, 30);
 
-        solde_joueur_1.setFont(new java.awt.Font("Tahoma", 1, 18));
+        solde_joueur_1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         solde_joueur_1.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(solde_joueur_1);
         solde_joueur_1.setBounds(1260, 80, 80, 30);
@@ -3150,6 +3431,10 @@ public class Partie_Monopoly extends javax.swing.JFrame {
         getContentPane().add(solde_joueur_4);
         solde_joueur_4.setBounds(1250, 450, 80, 30);
 
+        plateau_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/plateau_4.jpg"))); // NOI18N
+        getContentPane().add(plateau_3);
+        plateau_3.setBounds(0, 0, 1380, 720);
+
         plateau_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/plateau_2.jpg"))); // NOI18N
         getContentPane().add(plateau_1);
         plateau_1.setBounds(10, 0, 1380, 720);
@@ -3157,10 +3442,6 @@ public class Partie_Monopoly extends javax.swing.JFrame {
         plateau_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/plateau_3.jpg"))); // NOI18N
         getContentPane().add(plateau_2);
         plateau_2.setBounds(0, 0, 1380, 720);
-
-        plateau_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/plateau_4.jpg"))); // NOI18N
-        getContentPane().add(plateau_3);
-        plateau_3.setBounds(0, 0, 1380, 720);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -3190,30 +3471,37 @@ public class Partie_Monopoly extends javax.swing.JFrame {
             solde_joueur_2.setText("" + choix_joueurs.joueurs.get(1).getSolde());
             nom_joueur2.setVisible(true);
             solde_joueur_2.setVisible(true);
-            
+
             jLabelPion_1_1.setVisible(false);
             jLabelPion_1_2.setVisible(false);
             jLabelPion_1_3.setVisible(false);
             jLabelPion_1_4.setVisible(false);
-            
-            if(choix_joueurs.joueurs.get(0).getIcone()==1)
+
+            if (choix_joueurs.joueurs.get(0).getIcone() == 1) {
                 jLabelPion_1_1.setVisible(true);
-            if(choix_joueurs.joueurs.get(0).getIcone()==2)
+            }
+            if (choix_joueurs.joueurs.get(0).getIcone() == 2) {
                 jLabelPion_1_2.setVisible(true);
-            if(choix_joueurs.joueurs.get(0).getIcone()==3)
+            }
+            if (choix_joueurs.joueurs.get(0).getIcone() == 3) {
                 jLabelPion_1_3.setVisible(true);
-            if(choix_joueurs.joueurs.get(0).getIcone()==4)
+            }
+            if (choix_joueurs.joueurs.get(0).getIcone() == 4) {
                 jLabelPion_1_4.setVisible(true);
-            
-            if(choix_joueurs.joueurs.get(1).getIcone()==1)
+            }
+
+            if (choix_joueurs.joueurs.get(1).getIcone() == 1) {
                 jLabelPion_1_1.setVisible(true);
-            if(choix_joueurs.joueurs.get(1).getIcone()==2)
+            }
+            if (choix_joueurs.joueurs.get(1).getIcone() == 2) {
                 jLabelPion_1_2.setVisible(true);
-            if(choix_joueurs.joueurs.get(1).getIcone()==3)
+            }
+            if (choix_joueurs.joueurs.get(1).getIcone() == 3) {
                 jLabelPion_1_3.setVisible(true);
-            if(choix_joueurs.joueurs.get(1).getIcone()==4)
+            }
+            if (choix_joueurs.joueurs.get(1).getIcone() == 4) {
                 jLabelPion_1_4.setVisible(true);
-            
+            }
 
         }
 
@@ -3236,38 +3524,50 @@ public class Partie_Monopoly extends javax.swing.JFrame {
             solde_joueur_3.setText("" + choix_joueurs.joueurs.get(2).getSolde());
             nom_joueur3.setVisible(true);
             solde_joueur_3.setVisible(true);
-            
+
             jLabelPion_1_1.setVisible(false);
             jLabelPion_1_2.setVisible(false);
             jLabelPion_1_3.setVisible(false);
             jLabelPion_1_4.setVisible(false);
-            
-            if(choix_joueurs.joueurs.get(0).getIcone()==1)
+
+            if (choix_joueurs.joueurs.get(0).getIcone() == 1) {
                 jLabelPion_1_1.setVisible(true);
-            if(choix_joueurs.joueurs.get(0).getIcone()==2)
+            }
+            if (choix_joueurs.joueurs.get(0).getIcone() == 2) {
                 jLabelPion_1_2.setVisible(true);
-            if(choix_joueurs.joueurs.get(0).getIcone()==3)
+            }
+            if (choix_joueurs.joueurs.get(0).getIcone() == 3) {
                 jLabelPion_1_3.setVisible(true);
-            if(choix_joueurs.joueurs.get(0).getIcone()==4)
+            }
+            if (choix_joueurs.joueurs.get(0).getIcone() == 4) {
                 jLabelPion_1_4.setVisible(true);
-            
-            if(choix_joueurs.joueurs.get(1).getIcone()==1)
+            }
+
+            if (choix_joueurs.joueurs.get(1).getIcone() == 1) {
                 jLabelPion_1_1.setVisible(true);
-            if(choix_joueurs.joueurs.get(1).getIcone()==2)
+            }
+            if (choix_joueurs.joueurs.get(1).getIcone() == 2) {
                 jLabelPion_1_2.setVisible(true);
-            if(choix_joueurs.joueurs.get(1).getIcone()==3)
+            }
+            if (choix_joueurs.joueurs.get(1).getIcone() == 3) {
                 jLabelPion_1_3.setVisible(true);
-            if(choix_joueurs.joueurs.get(1).getIcone()==4)
+            }
+            if (choix_joueurs.joueurs.get(1).getIcone() == 4) {
                 jLabelPion_1_4.setVisible(true);
-            
-            if(choix_joueurs.joueurs.get(2).getIcone()==1)
+            }
+
+            if (choix_joueurs.joueurs.get(2).getIcone() == 1) {
                 jLabelPion_1_1.setVisible(true);
-            if(choix_joueurs.joueurs.get(2).getIcone()==2)
+            }
+            if (choix_joueurs.joueurs.get(2).getIcone() == 2) {
                 jLabelPion_1_2.setVisible(true);
-            if(choix_joueurs.joueurs.get(2).getIcone()==3)
+            }
+            if (choix_joueurs.joueurs.get(2).getIcone() == 3) {
                 jLabelPion_1_3.setVisible(true);
-            if(choix_joueurs.joueurs.get(2).getIcone()==4)
+            }
+            if (choix_joueurs.joueurs.get(2).getIcone() == 4) {
                 jLabelPion_1_4.setVisible(true);
+            }
 
         }
 
@@ -3300,42 +3600,58 @@ public class Partie_Monopoly extends javax.swing.JFrame {
             jLabelPion_1_2.setVisible(false);
             jLabelPion_1_3.setVisible(false);
             jLabelPion_1_4.setVisible(false);
-            
-            if(choix_joueurs.joueurs.get(0).getIcone()==1)
+
+            if (choix_joueurs.joueurs.get(0).getIcone() == 1) {
                 jLabelPion_1_1.setVisible(true);
-            if(choix_joueurs.joueurs.get(0).getIcone()==2)
+            }
+            if (choix_joueurs.joueurs.get(0).getIcone() == 2) {
                 jLabelPion_1_2.setVisible(true);
-            if(choix_joueurs.joueurs.get(0).getIcone()==3)
+            }
+            if (choix_joueurs.joueurs.get(0).getIcone() == 3) {
                 jLabelPion_1_3.setVisible(true);
-            if(choix_joueurs.joueurs.get(0).getIcone()==4)
+            }
+            if (choix_joueurs.joueurs.get(0).getIcone() == 4) {
                 jLabelPion_1_4.setVisible(true);
-            
-            if(choix_joueurs.joueurs.get(1).getIcone()==1)
+            }
+
+            if (choix_joueurs.joueurs.get(1).getIcone() == 1) {
                 jLabelPion_1_1.setVisible(true);
-            if(choix_joueurs.joueurs.get(1).getIcone()==2)
+            }
+            if (choix_joueurs.joueurs.get(1).getIcone() == 2) {
                 jLabelPion_1_2.setVisible(true);
-            if(choix_joueurs.joueurs.get(1).getIcone()==3)
+            }
+            if (choix_joueurs.joueurs.get(1).getIcone() == 3) {
                 jLabelPion_1_3.setVisible(true);
-            if(choix_joueurs.joueurs.get(1).getIcone()==4)
+            }
+            if (choix_joueurs.joueurs.get(1).getIcone() == 4) {
                 jLabelPion_1_4.setVisible(true);
-            
-            if(choix_joueurs.joueurs.get(2).getIcone()==1)
+            }
+
+            if (choix_joueurs.joueurs.get(2).getIcone() == 1) {
                 jLabelPion_1_1.setVisible(true);
-            if(choix_joueurs.joueurs.get(2).getIcone()==2)
+            }
+            if (choix_joueurs.joueurs.get(2).getIcone() == 2) {
                 jLabelPion_1_2.setVisible(true);
-            if(choix_joueurs.joueurs.get(2).getIcone()==3)
+            }
+            if (choix_joueurs.joueurs.get(2).getIcone() == 3) {
                 jLabelPion_1_3.setVisible(true);
-            if(choix_joueurs.joueurs.get(2).getIcone()==4)
+            }
+            if (choix_joueurs.joueurs.get(2).getIcone() == 4) {
                 jLabelPion_1_4.setVisible(true);
-            
-            if(choix_joueurs.joueurs.get(3).getIcone()==1)
+            }
+
+            if (choix_joueurs.joueurs.get(3).getIcone() == 1) {
                 jLabelPion_1_1.setVisible(true);
-            if(choix_joueurs.joueurs.get(3).getIcone()==2)
+            }
+            if (choix_joueurs.joueurs.get(3).getIcone() == 2) {
                 jLabelPion_1_2.setVisible(true);
-            if(choix_joueurs.joueurs.get(3).getIcone()==3)
+            }
+            if (choix_joueurs.joueurs.get(3).getIcone() == 3) {
                 jLabelPion_1_3.setVisible(true);
-            if(choix_joueurs.joueurs.get(3).getIcone()==4)
+            }
+            if (choix_joueurs.joueurs.get(3).getIcone() == 4) {
                 jLabelPion_1_4.setVisible(true);
+            }
         }
 
         for (int i = 0; i < choix_joueurs.joueurs.size(); i++) {
@@ -3372,23 +3688,22 @@ public class Partie_Monopoly extends javax.swing.JFrame {
                     jLabelDe2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopoly/images/de_" + b + ".png")));
                     int sommeDes = a + b;
 
-        val_somme_de = sommeDes;
+                    val_somme_de = sommeDes;
 
-        choix_joueurs.joueurs.get(RoleCourant).setPos(getNouvellePosition(choix_joueurs.joueurs.get(RoleCourant).getPos(), sommeDes));
-        Sedeplacer(choix_joueurs.joueurs.get(RoleCourant));
+                    choix_joueurs.joueurs.get(RoleCourant).setPos(getNouvellePosition(choix_joueurs.joueurs.get(RoleCourant).getPos(), sommeDes));
+                    Sedeplacer(choix_joueurs.joueurs.get(RoleCourant));
 
-        if (nombreGere1 != nombreGere2) {
-            getRoleJoueurSuivant();
-        }
+                    if (nombreGere1 != nombreGere2) {
+                        getRoleJoueurSuivant();
+                    }
 
                 }
 
             }.start();
-            } 
-		catch (ClassCastException e) {
-			System.err.println("Des expected object to method updateDice");
-		}
+        } catch (ClassCastException e) {
+            System.err.println("Des expected object to method updateDice");
         }
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int lower = 1;
         int higher = 7;
@@ -3396,12 +3711,14 @@ public class Partie_Monopoly extends javax.swing.JFrame {
         int nombreGere2;
         nombreGere1 = (int) (Math.random() * (higher - lower)) + lower;
         nombreGere2 = (int) (Math.random() * (higher - lower)) + lower;
-        updateDice(nombreGere1,nombreGere2);
-        
-        
+        updateDice(nombreGere1, nombreGere2);
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3416,8 +3733,39 @@ public class Partie_Monopoly extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     public static javax.swing.JLabel jLabel1;
+    protected static javax.swing.JLabel jLabel10;
+    protected static javax.swing.JLabel jLabel11;
+    protected static javax.swing.JLabel jLabel12;
+    protected static javax.swing.JLabel jLabel13;
+    protected static javax.swing.JLabel jLabel14;
+    protected static javax.swing.JLabel jLabel15;
+    protected static javax.swing.JLabel jLabel16;
+    protected static javax.swing.JLabel jLabel17;
+    protected static javax.swing.JLabel jLabel18;
+    protected static javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    protected static javax.swing.JLabel jLabel20;
+    protected static javax.swing.JLabel jLabel21;
+    protected static javax.swing.JLabel jLabel22;
+    protected static javax.swing.JLabel jLabel23;
+    protected static javax.swing.JLabel jLabel24;
+    protected static javax.swing.JLabel jLabel25;
+    protected static javax.swing.JLabel jLabel26;
+    protected static javax.swing.JLabel jLabel27;
+    protected static javax.swing.JLabel jLabel28;
+    protected static javax.swing.JLabel jLabel29;
+    protected static javax.swing.JLabel jLabel3;
+    protected static javax.swing.JLabel jLabel30;
+    protected static javax.swing.JLabel jLabel31;
+    protected static javax.swing.JLabel jLabel32;
     public static javax.swing.JLabel jLabel4;
+    protected static javax.swing.JLabel jLabel5;
+    protected static javax.swing.JLabel jLabel6;
+    protected static javax.swing.JLabel jLabel7;
+    protected static javax.swing.JLabel jLabel8;
+    protected static javax.swing.JLabel jLabel9;
     public static javax.swing.JLabel jLabelDe1;
     public static javax.swing.JLabel jLabelDe2;
     public static javax.swing.JLabel jLabelPion_10_1;

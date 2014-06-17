@@ -331,7 +331,9 @@ if(position!=11 && position!=21 && position!=31 && position!=3 && position!=18 &
 
         Propriete t=(Propriete)(plateau.get(position));
         choix_joueurs.joueurs.get(id_joueur).modifierSolde((int)-(t.getPrixAchat()));
-
+        choix_joueurs.joueurs.get(id_joueur).addProprietes(plateau.get(position));
+        
+        
         Partie_Monopoly.solde_joueur_1.setText(""+choix_joueurs.joueurs.get(0).getSolde());
         Partie_Monopoly.solde_joueur_2.setText(""+choix_joueurs.joueurs.get(1).getSolde());
 

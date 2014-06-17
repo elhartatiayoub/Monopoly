@@ -18,7 +18,7 @@ public class Terrain extends Propriete {
 			double loyer4, double loyerHotel, double prixMaison,
 			double valeurAjouteeHotel) {
 		
-		
+		this.setNumCase(numCase);
 		this.setNomCase(nomCase);
 		this.setPrixAchat(prixAchat);
 		this.setAchete(false);

@@ -2,9 +2,10 @@ package monopoly.app;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
 
-public class Joueur {
+public class Joueur extends Observable{
 
         private int id;
 
@@ -14,7 +15,16 @@ public class Joueur {
 
     public void setProprietes(List<Case> proprietes) {
         this.proprietes = proprietes;
+        setChanged();
+        notifyObservers(proprietes);
     }
+    public void addProprietes(Case propriete) {
+        this.proprietes.add(propriete);
+        System.out.println(propriete.getNomCase()+" -------- "+propriete.getNumCase());
+        setChanged();
+        notifyObservers(proprietes);
+    }
+    
 	private String nom;
         private int icone;
 	private int pos ;
